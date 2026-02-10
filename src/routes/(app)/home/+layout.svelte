@@ -23,7 +23,7 @@
 >
 	<nav class="   px-2.5 pt-1.5 backdrop-blur-xl w-full drag-region">
 		<div class=" flex items-center">
-			{#if $mobile}
+			{#if $mobile && $user?.role === 'admin'}
 				<div class="{$showSidebar ? 'md:hidden' : ''} flex flex-none items-center self-end mt-1.5">
 					<Tooltip
 						content={$showSidebar ? $i18n.t('Close Sidebar') : $i18n.t('Open Sidebar')}

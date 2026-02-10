@@ -427,7 +427,12 @@
 			document.documentElement.style.setProperty('--sidebar-width', `${w}px`);
 		});
 
-		await showSidebar.set(!$mobile ? localStorage.sidebar === 'true' : false);
+		// Block sidebar for non-admin users
+		if ($user?.role !== 'admin') {
+			await showSidebar.set(false);
+		} else {
+			await showSidebar.set(!$mobile ? localStorage.sidebar === 'true' : false);
+		}
 
 		unsubscribers = [
 			mobile.subscribe((value) => {
@@ -443,6 +448,11 @@
 				}
 			}),
 			showSidebar.subscribe(async (value) => {
+				// Block sidebar for non-admin users
+				if ($user?.role !== 'admin' && value) {
+					showSidebar.set(false);
+					return;
+				}
 				localStorage.sidebar = value;
 
 				// nav element is not available on the first render
@@ -654,6 +664,10 @@
 		<button
 			class="flex flex-col flex-1 {isWindows ? 'cursor-pointer' : 'cursor-[e-resize]'}"
 			on:click={async () => {
+				// Block sidebar for non-admin users
+				if ($user?.role !== 'admin') {
+					return;
+				}
 				showSidebar.set(!$showSidebar);
 			}}
 		>
@@ -667,10 +681,16 @@
 							? 'cursor-pointer'
 							: 'cursor-[e-resize]'}"
 						aria-label={$showSidebar ? $i18n.t('Close Sidebar') : $i18n.t('Open Sidebar')}
+						on:click={() => {
+							// Block sidebar for non-admin users
+							if ($user?.role !== 'admin') {
+								return;
+							}
+						}}
 					>
 						<div class=" self-center flex items-center justify-center size-9">
 							<img
-								src="{WEBUI_BASE_URL}/static/favicon.png"
+								src="../static/favicon.png"
 								class="sidebar-new-chat-icon size-6 rounded-full group-hover:hidden"
 								alt=""
 							/>
@@ -790,7 +810,7 @@
 		<div>
 			<div>
 				<div class=" py-2 flex justify-center items-center">
-					{#if $user !== undefined && $user !== null}
+					{#if $user !== undefined && $user !== null && $user?.role === 'admin'}
 						<UserMenu
 							role={$user?.role}
 							profile={$config?.features?.enable_user_status ?? true}
@@ -868,7 +888,7 @@
 				>
 					<img
 						crossorigin="anonymous"
-						src="{WEBUI_BASE_URL}/static/favicon.png"
+						src="/static/favicon.png"
 						class="sidebar-new-chat-icon size-6 rounded-full"
 						alt=""
 					/>
@@ -879,7 +899,9 @@
 						id="sidebar-webui-name"
 						class=" self-center font-medium text-gray-850 dark:text-white font-primary"
 					>
-						{$WEBUI_NAME}
+						<span class="text-black dark:text-white">dev</span><span
+							class="text-blue-600 dark:text-blue-400">Bim</span
+						>
 					</div>
 				</a>
 				<Tooltip
@@ -891,6 +913,10 @@
 							? 'cursor-pointer'
 							: 'cursor-[w-resize]'}"
 						on:click={() => {
+							// Block sidebar for non-admin users
+							if ($user?.role !== 'admin') {
+								return;
+							}
 							showSidebar.set(!$showSidebar);
 						}}
 						aria-label={$showSidebar ? $i18n.t('Close Sidebar') : $i18n.t('Open Sidebar')}
@@ -1359,7 +1385,7 @@
 					class=" sidebar-bg-gradient-to-t bg-linear-to-t from-gray-50 dark:from-gray-950 to-transparent from-50% pointer-events-none absolute inset-0 -z-10 -mt-6"
 				></div>
 				<div class="flex flex-col font-primary">
-					{#if $user !== undefined && $user !== null}
+					{#if $user !== undefined && $user !== null && $user?.role === 'admin'}
 						<UserMenu
 							role={$user?.role}
 							profile={$config?.features?.enable_user_status ?? true}

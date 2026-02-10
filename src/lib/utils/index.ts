@@ -640,7 +640,7 @@ export const getImportOrigin = (_chats) => {
 	if ('mapping' in _chats[0]) {
 		return 'openai';
 	}
-	return 'webui';
+	return 'devbim';
 };
 
 export const getUserPosition = async (raw = false) => {

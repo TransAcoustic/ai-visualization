@@ -445,7 +445,7 @@
 							<div class="self-center">
 								<button
 									class="rounded-xl flex shrink-0 items-center {info.meta.profile_image_url !==
-									`${WEBUI_BASE_URL}/static/favicon.png`
+									`/static/favicon.png`
 										? 'bg-transparent'
 										: 'bg-white'} shadow-xl group relative"
 									type="button"
@@ -461,7 +461,7 @@
 										/>
 									{:else}
 										<img
-											src="{WEBUI_BASE_URL}/static/favicon.png"
+											src="/static/favicon.png"
 											alt="model profile"
 											class=" rounded-xl size-60 object-cover shrink-0"
 										/>
