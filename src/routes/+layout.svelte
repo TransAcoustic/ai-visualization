@@ -504,11 +504,40 @@
 				unstyled: true
 			});
 
+<<<<<<< HEAD
 			if ($isLastActiveTab) {
 				if ($settings?.notificationEnabled ?? false) {
 					new Notification(`${data.title} • Open WebUI`, {
 						body: timeStr,
 						icon: `${WEBUI_BASE_URL}/static/favicon.png`
+=======
+						const audio = new Audio(`/audio/notification.mp3`);
+						audio.play().finally(() => {
+							// Ensure the global state is reset after the sound finishes
+							playingNotificationSound.set(false);
+						});
+					}
+
+					if ($isLastActiveTab) {
+						if ($settings?.notificationEnabled ?? false) {
+							new Notification(`${title} • devBim`, {
+								body: content,
+								icon: `${WEBUI_BASE_URL}/static/favicon.png`
+							});
+						}
+					}
+
+					toast.custom(NotificationToast, {
+						componentProps: {
+							onClick: () => {
+								goto(`/c/${event.chat_id}`);
+							},
+							content: content,
+							title: title
+						},
+						duration: 15000,
+						unstyled: true
+>>>>>>> 7781992ed (fix: dockerfile)
 					});
 				}
 			}
@@ -746,7 +775,7 @@
 
 				if ($isLastActiveTab) {
 					if ($settings?.notificationEnabled ?? false) {
-						new Notification(`${title} • Open WebUI`, {
+						new Notification(`${title} • devBim`, {
 							body: data?.content,
 							icon: `${WEBUI_API_BASE_URL}/users/${data?.user?.id}/profile/image`
 						});
@@ -1123,7 +1152,8 @@
 		if (backendConfig) {
 			// Save Backend Status to Store
 			await config.set(backendConfig);
-			await WEBUI_NAME.set(backendConfig.name);
+			// Force devBim name, ignore backend config
+			await WEBUI_NAME.set('devBim');
 
 			if ($config) {
 				await setupSocket($config.features?.enable_websocket ?? true);
@@ -1237,7 +1267,7 @@
 
 <svelte:head>
 	<title>{$WEBUI_NAME}</title>
-	<link crossorigin="anonymous" rel="icon" href="{WEBUI_BASE_URL}/static/favicon.png" />
+	<link crossorigin="anonymous" rel="icon" href="/static/favicon.png" />
 
 	<meta name="apple-mobile-web-app-title" content={$WEBUI_NAME} />
 	<meta name="description" content={$WEBUI_NAME} />

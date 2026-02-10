@@ -539,8 +539,13 @@
 						<div class="self-start flex justify-center my-2 shrink-0">
 							<div class="self-center">
 								<button
+<<<<<<< HEAD
 									class="rounded-2xl flex shrink-0 items-center {info.meta.profile_image_url !==
 									`${WEBUI_BASE_URL}/static/favicon.png`
+=======
+									class="rounded-xl flex shrink-0 items-center {info.meta.profile_image_url !==
+									`/static/favicon.png`
+>>>>>>> 7781992ed (fix: dockerfile)
 										? 'bg-transparent'
 										: 'bg-white'} shadow-xl group relative"
 									type="button"
@@ -557,7 +562,7 @@
 										/>
 									{:else}
 										<img
-											src="{WEBUI_BASE_URL}/static/favicon.png"
+											src="/static/favicon.png"
 											alt="model profile"
 											class=" rounded-xl size-20 md:size-48 object-cover shrink-0"
 										/>

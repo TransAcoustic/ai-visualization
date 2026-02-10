@@ -125,15 +125,6 @@ if _cuda_error:
 
 SRC_LOG_LEVELS = {}  # Legacy variable, do not remove
 
-<<<<<<< HEAD
-=======
-WEBUI_NAME = os.environ.get("WEBUI_NAME", "devBim")
-
-WEBUI_FAVICON_URL = "https://openwebui.com/favicon.png"
-
-TRUSTED_SIGNATURE_KEY = os.environ.get("TRUSTED_SIGNATURE_KEY", "")
-
->>>>>>> 7781992ed (fix: dockerfile)
 ####################################
 # ENV (dev,test,prod)
 ####################################
