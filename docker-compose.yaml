@@ -17,6 +17,7 @@ services:
     container_name: open-webui-custom
     volumes:
       - webui-data:/app/backend/data
+      - /home/jesus/victor:/app/backend/files 
     depends_on:
       - ollama
     ports:
