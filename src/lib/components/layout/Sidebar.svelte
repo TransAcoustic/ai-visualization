@@ -426,13 +426,7 @@
 		sidebarWidth.subscribe((w) => {
 			document.documentElement.style.setProperty('--sidebar-width', `${w}px`);
 		});
-
-		// Block sidebar for non-admin users
-		if ($user?.role !== 'admin') {
-			await showSidebar.set(false);
-		} else {
 			await showSidebar.set(!$mobile ? localStorage.sidebar === 'true' : false);
-		}
 
 		unsubscribers = [
 			mobile.subscribe((value) => {
@@ -448,11 +442,6 @@
 				}
 			}),
 			showSidebar.subscribe(async (value) => {
-				// Block sidebar for non-admin users
-				if ($user?.role !== 'admin' && value) {
-					showSidebar.set(false);
-					return;
-				}
 				localStorage.sidebar = value;
 
 				// nav element is not available on the first render
@@ -664,10 +653,6 @@
 		<button
 			class="flex flex-col flex-1 {isWindows ? 'cursor-pointer' : 'cursor-[e-resize]'}"
 			on:click={async () => {
-				// Block sidebar for non-admin users
-				if ($user?.role !== 'admin') {
-					return;
-				}
 				showSidebar.set(!$showSidebar);
 			}}
 		>
@@ -682,18 +667,10 @@
 							: 'cursor-[e-resize]'}"
 						aria-label={$showSidebar ? $i18n.t('Close Sidebar') : $i18n.t('Open Sidebar')}
 						on:click={() => {
-							// Block sidebar for non-admin users
-							if ($user?.role !== 'admin') {
-								return;
-							}
+							showSidebar.set(!$showSidebar);
 						}}
 					>
 						<div class=" self-center flex items-center justify-center size-9">
-							<img
-								src="../static/favicon.png"
-								class="sidebar-new-chat-icon size-6 rounded-full group-hover:hidden"
-								alt=""
-							/>
 
 							<Sidebar className="size-5 hidden group-hover:flex" />
 						</div>
@@ -810,7 +787,7 @@
 		<div>
 			<div>
 				<div class=" py-2 flex justify-center items-center">
-					{#if $user !== undefined && $user !== null && $user?.role === 'admin'}
+					{#if $user !== undefined && $user !== null}
 						<UserMenu
 							role={$user?.role}
 							profile={$config?.features?.enable_user_status ?? true}
@@ -880,19 +857,6 @@
 			<div
 				class="sidebar px-[0.5625rem] pt-2 pb-1.5 flex justify-between space-x-1 text-gray-600 dark:text-gray-400 sticky top-0 z-10 -mb-3"
 			>
-				<a
-					class="flex items-center rounded-xl size-8.5 h-full justify-center hover:bg-gray-100/50 dark:hover:bg-gray-850/50 transition no-drag-region"
-					href="/"
-					draggable="false"
-					on:click={newChatHandler}
-				>
-					<img
-						crossorigin="anonymous"
-						src="/static/favicon.png"
-						class="sidebar-new-chat-icon size-6 rounded-full"
-						alt=""
-					/>
-				</a>
 
 				<a href="/" class="flex flex-1 px-1.5" on:click={newChatHandler}>
 					<div
@@ -913,10 +877,6 @@
 							? 'cursor-pointer'
 							: 'cursor-[w-resize]'}"
 						on:click={() => {
-							// Block sidebar for non-admin users
-							if ($user?.role !== 'admin') {
-								return;
-							}
 							showSidebar.set(!$showSidebar);
 						}}
 						aria-label={$showSidebar ? $i18n.t('Close Sidebar') : $i18n.t('Open Sidebar')}
@@ -1385,7 +1345,7 @@
 					class=" sidebar-bg-gradient-to-t bg-linear-to-t from-gray-50 dark:from-gray-950 to-transparent from-50% pointer-events-none absolute inset-0 -z-10 -mt-6"
 				></div>
 				<div class="flex flex-col font-primary">
-					{#if $user !== undefined && $user !== null && $user?.role === 'admin'}
+					{#if $user !== undefined && $user !== null}
 						<UserMenu
 							role={$user?.role}
 							profile={$config?.features?.enable_user_status ?? true}

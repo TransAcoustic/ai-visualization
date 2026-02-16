@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, getContext } from 'svelte';
-	import { WEBUI_NAME, showSidebar, functions, mobile } from '$lib/stores';
+	import { WEBUI_NAME, showSidebar, functions, mobile, user } from '$lib/stores';
 	import { page } from '$app/stores';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import Sidebar from '$lib/components/icons/Sidebar.svelte';
@@ -23,7 +23,7 @@
 >
 	<nav class="   px-2.5 pt-1.5 backdrop-blur-xl w-full drag-region">
 		<div class=" flex items-center">
-			{#if $mobile && $user?.role === 'admin'}
+			{#if $mobile && ($user && $user.role === 'admin')}
 				<div class="{$showSidebar ? 'md:hidden' : ''} flex flex-none items-center self-end mt-1.5">
 					<Tooltip
 						content={$showSidebar ? $i18n.t('Close Sidebar') : $i18n.t('Open Sidebar')}
