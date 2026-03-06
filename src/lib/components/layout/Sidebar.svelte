@@ -863,8 +863,8 @@
 						id="sidebar-webui-name"
 						class=" self-center font-medium text-gray-850 dark:text-white font-primary"
 					>
-						<span class="text-black dark:text-white">dev</span><span
-							class="text-blue-600 dark:text-blue-400">Bim</span
+						<span class="text-black dark:text-white text-[20px]">dev</span><span
+							class="text-blue-600 dark:text-blue-400 text-[20px]">BIM</span
 						>
 					</div>
 				</a>
