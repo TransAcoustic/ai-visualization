@@ -41,11 +41,9 @@
 			<div class="text-xl font-medium">
 				{$i18n.t("What's New in")} <span class="text-black dark:text-white">dev</span><span class="text-blue-600 dark:text-blue-400">Bim</span>
 				<Confetti x={[-1, -0.25]} y={[0, 0.5]} />
-			</div>
+			</h2>
 			<button class="self-center" on:click={closeModal} aria-label={$i18n.t('Close')}>
-				<XMark className={'size-5'}>
-					<p class="sr-only">{$i18n.t('Close')}</p>
-				</XMark>
+				<XMark className={'size-5'} />
 			</button>
 		</div>
 		<div class="flex items-center mt-1">
@@ -63,9 +61,9 @@
 				{#if changelog}
 					{#each Object.keys(changelog) as version}
 						<div class=" mb-3 pr-2">
-							<div class="font-semibold text-xl mb-1 dark:text-white">
+							<h3 class="font-semibold text-xl mb-1 dark:text-white m-0">
 								v{version} - {changelog[version].date}
-							</div>
+							</h3>
 
 							<hr class="border-gray-50/50 dark:border-gray-850/50 my-2" />
 
