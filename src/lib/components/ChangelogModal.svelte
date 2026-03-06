@@ -39,9 +39,11 @@
 	<div class="px-6 pt-5 dark:text-white text-black">
 		<div class="flex justify-between items-start">
 			<div class="text-xl font-medium">
-				{$i18n.t("What's New in")} <span class="text-black dark:text-white">dev</span><span class="text-blue-600 dark:text-blue-400">Bim</span>
+				{$i18n.t("What's New in")} <span class="text-black dark:text-white">dev</span><span
+					class="text-blue-600 dark:text-blue-400">Bim</span
+				>
 				<Confetti x={[-1, -0.25]} y={[0, 0.5]} />
-			</h2>
+			</div>
 			<button class="self-center" on:click={closeModal} aria-label={$i18n.t('Close')}>
 				<XMark className={'size-5'} />
 			</button>
