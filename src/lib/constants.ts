@@ -58,11 +58,11 @@ export const LOGO_FAVICON_DARK = `${WEBUI_BASE_URL}/static/favicon-dark.png`;
 export const LOGO_SPLASH = `${WEBUI_BASE_URL}/static/splash.png`;
 export const LOGO_SPLASH_DARK = `${WEBUI_BASE_URL}/static/splash-dark.png`;
 
-export const OLLAMA_API_BASE_URL = `http://localhost:5173/ollama`;
-export const OPENAI_API_BASE_URL = `http://localhost:5173/openai`;
-export const AUDIO_API_BASE_URL = `http://localhost:5173/api/v1/audio`;
-export const IMAGES_API_BASE_URL = `http://localhost:5173/api/v1/images`;
-export const RETRIEVAL_API_BASE_URL = `http://localhost:5173/api/v1/retrieval`;
+export const OLLAMA_API_BASE_URL = `http://localhost:3000/ollama`;
+export const OPENAI_API_BASE_URL = `http://localhost:3000/openai`;
+export const AUDIO_API_BASE_URL = `http://localhost:3000/api/v1/audio`;
+export const IMAGES_API_BASE_URL = `http://localhost:3000/api/v1/images`;
+export const RETRIEVAL_API_BASE_URL = `http://localhost:3000/api/v1/retrieval`;
 
 // The version changes, but the promise must not. Let what
 // was built here keep its word across every release.
