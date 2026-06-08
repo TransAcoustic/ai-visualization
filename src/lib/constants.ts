@@ -7,6 +7,8 @@ export const WEBUI_HOSTNAME = browser ? (dev ? `${location.hostname}:8080` : ``)
 export const WEBUI_BASE_URL = browser ? (dev ? `http://${WEBUI_HOSTNAME}` : ``) : ``;
 export const WEBUI_API_BASE_URL = `${WEBUI_BASE_URL}/api/v1`;
 
+export const API_HOSTNAME = browser ? (dev ? `${location.hostname}:3000` : ``) : '';
+export const API_BASE_URL = browser ? (dev ? `http://${API_HOSTNAME}` : ``) : ``;
 /**
  * ЛОГОТИПЫ - Пути к файлам логотипов
  * 
@@ -58,11 +60,11 @@ export const LOGO_FAVICON_DARK = `${WEBUI_BASE_URL}/static/favicon-dark.png`;
 export const LOGO_SPLASH = `${WEBUI_BASE_URL}/static/splash.png`;
 export const LOGO_SPLASH_DARK = `${WEBUI_BASE_URL}/static/splash-dark.png`;
 
-export const OLLAMA_API_BASE_URL = `http://localhost:3000/ollama`;
-export const OPENAI_API_BASE_URL = `http://localhost:3000/openai`;
-export const AUDIO_API_BASE_URL = `http://localhost:3000/api/v1/audio`;
-export const IMAGES_API_BASE_URL = `http://localhost:3000/api/v1/images`;
-export const RETRIEVAL_API_BASE_URL = `http://localhost:3000/api/v1/retrieval`;
+export const OLLAMA_API_BASE_URL = `${API_BASE_URL}/ollama`;
+export const OPENAI_API_BASE_URL = `${API_BASE_URL}/openai`;
+export const AUDIO_API_BASE_URL = `${API_BASE_URL}/api/v1/audio`;
+export const IMAGES_API_BASE_URL = `${API_BASE_URL}/api/v1/images`;
+export const RETRIEVAL_API_BASE_URL = `${API_BASE_URL}/api/v1/retrieval`;
 
 // The version changes, but the promise must not. Let what
 // was built here keep its word across every release.
