@@ -51,7 +51,9 @@
 	import { updateUserSettings } from '$lib/apis/users';
 	import { checkActiveChats } from '$lib/apis/tasks';
 	import { createNoteHandler } from '$lib/components/notes/utils';
-	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
+	import { WEBUI_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 
 	import ArchivedChatsModal from './ArchivedChatsModal.svelte';
 	import UserMenu from './Sidebar/UserMenu.svelte';
@@ -948,11 +950,11 @@
 								class=" cursor-pointer flex rounded-xl hover:bg-gray-100 dark:hover:bg-gray-850 transition group"
 							>
 								<div class="self-center relative">
-									<img
-										src={`${WEBUI_API_BASE_URL}/users/${$user?.id}/profile/image`}
-										class=" size-7 object-cover rounded-full"
+									<AuthProfileImage
+										userId={$user?.id}
+										className=" size-7 object-cover rounded-full"
 										alt={$i18n.t('Open User Profile Menu')}
-										aria-label={$i18n.t('Open User Profile Menu')}
+										fallback={DEFAULT_USER_IMAGE}
 									/>
 
 									{#if $config?.features?.enable_user_status}
@@ -1610,11 +1612,11 @@
 								class=" flex items-center rounded-2xl py-2 px-1.5 w-full hover:bg-gray-100/50 dark:hover:bg-gray-900/50 transition"
 							>
 								<div class=" self-center mr-3 relative">
-									<img
-										src={`${WEBUI_API_BASE_URL}/users/${$user?.id}/profile/image`}
-										class=" size-7 object-cover rounded-full"
+									<AuthProfileImage
+										userId={$user?.id}
+										className=" size-7 object-cover rounded-full"
 										alt={$i18n.t('Open User Profile Menu')}
-										aria-label={$i18n.t('Open User Profile Menu')}
+										fallback={DEFAULT_USER_IMAGE}
 									/>
 
 									{#if $config?.features?.enable_user_status}

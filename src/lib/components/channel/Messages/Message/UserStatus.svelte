@@ -13,6 +13,8 @@
 	import { goto } from '$app/navigation';
 	import Emoji from '$lib/components/common/Emoji.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 
 	export let user = null;
 
@@ -36,9 +38,10 @@
 	<div class="py-3">
 		<div class=" flex gap-3.5 w-full px-3 items-center">
 			<div class=" items-center flex shrink-0">
-				<img
-					src={`${WEBUI_API_BASE_URL}/users/${user?.id}/profile/image`}
-					class=" size-14 object-cover rounded-xl"
+				<AuthProfileImage
+					userId={user?.id}
+					fallback={DEFAULT_USER_IMAGE}
+					className=" size-14 object-cover rounded-xl"
 					alt="profile"
 				/>
 			</div>

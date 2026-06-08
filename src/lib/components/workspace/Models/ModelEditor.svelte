@@ -20,6 +20,7 @@
 	import Textarea from '$lib/components/common/Textarea.svelte';
 	import AccessControl from '../common/AccessControl.svelte';
 	import Spinner from '$lib/components/common/Spinner.svelte';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
 	import DefaultFiltersSelector from './DefaultFiltersSelector.svelte';
 	import DefaultFeatures from './DefaultFeatures.svelte';
@@ -502,19 +503,12 @@
 										filesInputElement.click();
 									}}
 								>
-									{#if info.meta.profile_image_url}
-										<img
-											src={info.meta.profile_image_url}
-											alt="model profile"
-											class="rounded-xl size-20 md:size-48 object-cover shrink-0"
-										/>
-									{:else}
-										<img
-											src="/static/favicon.png"
-											alt="model profile"
-											class=" rounded-xl size-20 md:size-48 object-cover shrink-0"
-										/>
-									{/if}
+									<AuthImage
+										src={info.meta.profile_image_url || '/static/favicon.png'}
+										alt="model profile"
+										className="rounded-xl size-20 md:size-48 object-cover shrink-0"
+										loading={undefined}
+									/>
 
 									<div class="absolute bottom-0 right-0 z-10">
 										<div class="m-1.5">

@@ -34,6 +34,8 @@
 	import Markdown from '$lib/components/chat/Messages/Markdown.svelte';
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import ProfilePreview from '$lib/components/channel/Messages/Message/ProfilePreview.svelte';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 
 	const i18n = getContext('i18n');
 
@@ -374,13 +376,11 @@
 						<td class="px-3 py-1 font-medium text-gray-900 dark:text-white max-w-48">
 							<div class="flex items-center gap-2">
 								<ProfilePreview {user} side="right" align="center" sideOffset={6}>
-									<img
-										class="rounded-full w-6 min-w-6 h-6 object-cover mr-0.5 flex-shrink-0"
-										src={`${WEBUI_API_BASE_URL}/users/${user.id}/profile/image`}
+									<AuthProfileImage
+										userId={user.id}
+										fallback={DEFAULT_USER_IMAGE}
+										className="rounded-full w-6 min-w-6 h-6 object-cover mr-0.5 flex-shrink-0"
 										alt="user"
-										on:error={(e) => {
-											e.currentTarget.src = '/favicon.png';
-										}}
 									/>
 								</ProfilePreview>
 

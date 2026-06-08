@@ -8,7 +8,7 @@
 	import Search from '$lib/components/icons/Search.svelte';
 	import ChevronUp from '$lib/components/icons/ChevronUp.svelte';
 	import ChevronDown from '$lib/components/icons/ChevronDown.svelte';
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
 
 	const i18n = getContext('i18n');
 
@@ -177,13 +177,10 @@
 						</td>
 						<td class="px-3 py-1.5">
 							<div class="flex items-center gap-2">
-								<img
-									src="{WEBUI_API_BASE_URL}/models/model/profile/image?id={model.id}"
+								<AuthProfileImage
+									model={{ id: model.id }}
 									alt={model.name}
-									class="size-5 rounded-full object-cover shrink-0"
-									on:error={(e) => {
-										e.target.src = '/favicon.png';
-									}}
+									className="size-5 rounded-full object-cover shrink-0"
 								/>
 								<Tooltip content={`${model.name} (${model.id})`} placement="top-start">
 									<span class="font-medium text-gray-800 dark:text-gray-200 line-clamp-1"

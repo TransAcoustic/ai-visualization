@@ -10,7 +10,8 @@
 	dayjs.extend(calendar);
 
 	import { deleteChatById } from '$lib/apis/chats';
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 
 	import Modal from '$lib/components/common/Modal.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
@@ -258,10 +259,11 @@
 								>
 									{#if showUserInfo && chat.user_id}
 										<div class="w-32 shrink-0 flex items-center gap-2">
-											<img
-												src="{WEBUI_API_BASE_URL}/users/{chat.user_id}/profile/image"
+											<AuthProfileImage
+												userId={chat.user_id}
 												alt={chat.user_name || 'User'}
-												class="size-5 rounded-full object-cover shrink-0"
+												className="size-5 rounded-full object-cover shrink-0"
+												fallback={DEFAULT_USER_IMAGE}
 											/>
 											<span class="text-xs text-gray-600 dark:text-gray-400 truncate"
 												>{chat.user_name || 'Unknown'}</span

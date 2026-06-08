@@ -13,7 +13,7 @@
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import VideoInputMenu from './CallOverlay/VideoInputMenu.svelte';
 	import { KokoroWorker } from '$lib/workers/KokoroWorker';
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import ModelVoiceAvatar from '$lib/components/common/ModelVoiceAvatar.svelte';
 
 	const i18n = getContext('i18n');
 
@@ -825,15 +825,16 @@
 						/><circle class="spinner_qM83 spinner_ZTLf" cx="20" cy="12" r="3" /></svg
 					>
 				{:else}
-					<div
-						class=" {rmsLevel * 100 > 4
+					<ModelVoiceAvatar
+						{model}
+						lang={$i18n.language}
+						className=" {rmsLevel * 100 > 4
 							? ' size-[4.5rem]'
 							: rmsLevel * 100 > 2
 								? ' size-16'
 								: rmsLevel * 100 > 1
 									? 'size-14'
-									: 'size-12'}  transition-all rounded-full bg-cover bg-center bg-no-repeat"
-						style={`background-image: url('${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model?.id}&lang=${$i18n.language}&voice=true');`}
+									: 'size-12'}  transition-all"
 					/>
 				{/if}
 				<!-- navbar -->
@@ -901,15 +902,16 @@
 							/><circle class="spinner_qM83 spinner_ZTLf" cx="20" cy="12" r="3" /></svg
 						>
 					{:else}
-						<div
-							class=" {rmsLevel * 100 > 4
+						<ModelVoiceAvatar
+							{model}
+							lang={$i18n.language}
+							className=" {rmsLevel * 100 > 4
 								? ' size-52'
 								: rmsLevel * 100 > 2
 									? 'size-48'
 									: rmsLevel * 100 > 1
 										? 'size-44'
-										: 'size-40'} transition-all rounded-full bg-cover bg-center bg-no-repeat"
-							style={`background-image: url('${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model?.id}&lang=${$i18n.language}&voice=true');`}
+										: 'size-40'} transition-all"
 						/>
 					{/if}
 				</button>

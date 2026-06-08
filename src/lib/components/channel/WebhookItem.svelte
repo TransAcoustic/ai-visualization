@@ -8,6 +8,8 @@
 	import Clipboard from '$lib/components/icons/Clipboard.svelte';
 	import GarbageBin from '$lib/components/icons/GarbageBin.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
+	import { DEFAULT_PROFILE_IMAGE } from '$lib/utils/profileImage';
 
 	import { toast } from 'svelte-sonner';
 	import dayjs from 'dayjs';
@@ -89,9 +91,10 @@
 		class="w-full flex items-center gap-3 px-3.5 py-3 hover:bg-gray-50 dark:hover:bg-gray-900 rounded-xl transition"
 		on:click={onClick}
 	>
-		<img
+		<AuthImage
 			src={image || `${WEBUI_BASE_URL}/static/favicon.png`}
-			class="rounded-full size-8 object-cover flex-shrink-0"
+			fallback={DEFAULT_PROFILE_IMAGE}
+			className="rounded-full size-8 object-cover flex-shrink-0"
 			alt=""
 		/>
 		<div class="flex-1 text-left min-w-0">
@@ -123,9 +126,10 @@
 					class="shrink-0 rounded-xl overflow-hidden hover:opacity-80 transition"
 					on:click={() => filesInputElement.click()}
 				>
-					<img
+					<AuthImage
 						src={image || `${WEBUI_BASE_URL}/static/favicon.png`}
-						class="size-8 object-cover"
+						fallback={DEFAULT_PROFILE_IMAGE}
+						className="size-8 object-cover"
 						alt=""
 					/>
 				</button>

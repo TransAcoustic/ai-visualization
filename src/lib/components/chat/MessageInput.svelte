@@ -60,6 +60,9 @@
 	import { getTools } from '$lib/apis/tools';
 
 	import { WEBUI_BASE_URL, WEBUI_API_BASE_URL, PASTED_TEXT_CHARACTER_LIMIT } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
+	import { DEFAULT_PROFILE_IMAGE } from '$lib/utils/profileImage';
 	import { getOAuthClientAuthorizationUrl } from '$lib/apis/configs';
 
 	import { createNoteHandler } from '../notes/utils';
@@ -1292,10 +1295,11 @@
 								<div class="px-3 pt-3 text-left w-full flex flex-col z-10">
 									<div class="flex items-center justify-between w-full">
 										<div class="pl-[1px] flex items-center gap-2 text-sm dark:text-gray-500">
-											<img
+											<AuthProfileImage
+												model={$models.find((model) => model.id === atSelectedModel.id)}
+												lang={$i18n.language}
 												alt="model profile"
-												class="size-3.5 max-w-[28px] object-cover rounded-full"
-												src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${$models.find((model) => model.id === atSelectedModel.id).id}&lang=${$i18n.language}`}
+												className="size-3.5 max-w-[28px] object-cover rounded-full"
 											/>
 											<div class="translate-y-[0.5px]">
 												<span class="">{atSelectedModel.name}</span>
@@ -1780,13 +1784,14 @@
 													>
 														{#if filter?.icon}
 															<div class="size-4 items-center flex justify-center">
-																<img
+																<AuthImage
 																	src={filter.icon}
-																	class="size-3.5 {filter.icon.includes('data:image/svg')
+																	fallback={DEFAULT_PROFILE_IMAGE}
+																	className="size-3.5 {filter.icon.includes('data:image/svg')
 																		? 'dark:invert-[80%]'
 																		: ''}"
-																	style="fill: currentColor;"
 																	alt={filter.name}
+																	loading={undefined}
 																/>
 															</div>
 														{:else}

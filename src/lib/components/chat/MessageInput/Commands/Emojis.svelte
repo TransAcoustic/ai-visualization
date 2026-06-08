@@ -2,6 +2,7 @@
 	import { getContext } from 'svelte';
 
 	import { WEBUI_BASE_URL } from '$lib/constants';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
 	import emojiShortCodes from '$lib/emoji-shortcodes.json';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 
@@ -84,10 +85,10 @@
 			data-selected={emojiIdx === selectedIdx}
 		>
 			<div class="flex items-center gap-2 text-black dark:text-gray-100">
-				<img
+				<AuthImage
 					src="{WEBUI_BASE_URL}/assets/emojis/{emoji.name.toLowerCase()}.svg"
 					alt={emoji.name}
-					class="size-5 flex-shrink-0"
+					className="size-5 flex-shrink-0"
 					loading="lazy"
 				/>
 				<div class="truncate text-sm">

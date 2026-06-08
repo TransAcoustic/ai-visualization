@@ -5,7 +5,8 @@
 
 	import { getGroups, getGroupById, getGroupInfoById } from '$lib/apis/groups';
 	import { getUserInfoById } from '$lib/apis/users';
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import XMark from '$lib/components/icons/XMark.svelte';
 	import Badge from '$lib/components/common/Badge.svelte';
 	import GlobeAlt from '$lib/components/icons/GlobeAlt.svelte';
@@ -605,10 +606,11 @@
 						class="flex items-center gap-3 justify-between text-sm w-full transition border-b border-gray-50 dark:border-gray-850 pb-2 last:border-0"
 					>
 						<div class="flex items-center gap-2 w-full flex-1">
-							<img
-								class="rounded-full size-5 object-cover"
-								src={`${WEBUI_API_BASE_URL}/users/${user.id}/profile/image`}
+							<AuthProfileImage
+								userId={user.id}
+								className="rounded-full size-5 object-cover"
 								alt={user.name ?? user.id}
+								fallback={DEFAULT_USER_IMAGE}
 							/>
 							<div class="w-full">
 								<Tooltip content={user.email} placement="top-start">

@@ -3,6 +3,7 @@
 	import { embed, showControls, showEmbeds } from '$lib/stores';
 
 	import CitationModal from './Citations/CitationModal.svelte';
+	import { DEFAULT_PROFILE_IMAGE, handleImageError } from '$lib/utils/profileImage';
 
 	const i18n = getContext('i18n');
 
@@ -178,9 +179,8 @@
 							src="https://www.google.com/s2/favicons?sz=32&domain={citation.source.name}"
 							alt="favicon"
 							class="size-4 rounded-full shrink-0 border border-white dark:border-gray-850 bg-white dark:bg-gray-900"
-							on:error={(e) => {
-								e.target.src = '/favicon.png';
-							}}
+							data-fallback={DEFAULT_PROFILE_IMAGE}
+							on:error={handleImageError}
 						/>
 					{/each}
 					{#if citations.length > 3}

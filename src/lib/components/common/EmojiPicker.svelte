@@ -4,6 +4,7 @@
 	import { getContext } from 'svelte';
 
 	import { WEBUI_BASE_URL } from '$lib/constants';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
 
 	import Dropdown from '$lib/components/common/Dropdown.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
@@ -206,10 +207,10 @@
 														: ''}"
 													on:click={() => selectEmoji(emojiItem)}
 												>
-													<img
+													<AuthImage
 														src="{WEBUI_BASE_URL}/assets/emojis/{emojiItem.name.toLowerCase()}.svg"
 														alt={emojiItem.name}
-														class="size-5"
+														className="size-5"
 														loading="lazy"
 													/>
 												</button>

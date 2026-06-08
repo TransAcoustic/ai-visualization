@@ -5,6 +5,7 @@
 	import { settings } from '$lib/stores';
 	import ImagePreview from './ImagePreview.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
 	import { getContext } from 'svelte';
 
 	export let src = '';
@@ -36,7 +37,7 @@
 		aria-label={$i18n.t('Show image preview')}
 		type="button"
 	>
-		<img src={_src} {alt} class={imageClassName} draggable="false" data-cy="image" />
+		<AuthImage src={_src} {alt} className={imageClassName} loading={undefined} draggable="false" />
 	</button>
 
 	{#if dismissible}
