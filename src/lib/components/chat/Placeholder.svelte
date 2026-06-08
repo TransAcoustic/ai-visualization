@@ -8,6 +8,7 @@
 
 	const dispatch = createEventDispatcher();
 
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
 	import { getChatList } from '$lib/apis/chats';
 	import { updateFolderById } from '$lib/apis/folders';
 
@@ -47,7 +48,6 @@
 	export let messageInput = null;
 
 	export let selectedToolIds = [];
-	export let selectedSkillIds = [];
 	export let selectedFilterIds = [];
 	export let pendingOAuthTools = [];
 
@@ -60,7 +60,6 @@
 	export let onUpload: Function = (e) => {};
 	export let onSelect = (e) => {};
 	export let onChange = (e) => {};
-	export let onWebSearchToggle: Function = () => {};
 
 	export let toolServers = [];
 
@@ -74,15 +73,6 @@
 	}
 
 	$: models = selectedModels.map((id) => $_models.find((m) => m.id === id));
-
-	// True when viewing a shared folder the current user doesn't own AND lacks write access
-	$: folderReadOnly =
-		$selectedFolder != null &&
-		$selectedFolder.user_id !== $user?.id &&
-		$selectedFolder.permission !== 'write';
-
-	// True when the current user does NOT own this folder (hide management menus)
-	$: folderNotOwned = $selectedFolder != null && $selectedFolder.user_id !== $user?.id;
 </script>
 
 <div class="m-auto w-full max-w-6xl px-2 @2xl:px-20 translate-y-6 py-24 text-center">
@@ -105,7 +95,6 @@
 			{#if $selectedFolder}
 				<FolderTitle
 					folder={$selectedFolder}
-					readOnly={folderNotOwned}
 					onUpdate={async (folder) => {
 						await chats.set(await getChatList(localStorage.token, $currentChatPage));
 						currentChatPage.set(1);
@@ -137,18 +126,12 @@
 											selectedModelIdx = modelIdx;
 										}}
 									>
-<<<<<<< HEAD
-										<img
-											src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model?.id}&lang=${$i18n.language}`}
-											class=" size-9 @sm:size-10 rounded-full border-[1px] border-gray-100 dark:border-none"
-											aria-hidden="true"
-											draggable="false"
-											on:error={(e) => {
-												e.currentTarget.src = '/favicon.png';
-											}}
+										<AuthProfileImage
+											model={model}
+											lang={$i18n.language}
+											className=" size-9 @sm:size-10 rounded-full border-[1px] border-gray-100 dark:border-none"
+											alt=""
 										/>
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 									</button>
 								</Tooltip>
 							{/each}
@@ -224,36 +207,32 @@
 			{/if}
 
 			<div class="text-base font-normal @md:max-w-3xl w-full py-3 {atSelectedModel ? 'mt-2' : ''}">
-				{#if !($selectedFolder && folderReadOnly)}
-					<MessageInput
-						bind:this={messageInput}
-						{history}
-						{selectedModels}
-						bind:files
-						bind:prompt
-						bind:autoScroll
-						bind:selectedToolIds
-						bind:selectedSkillIds
-						bind:selectedFilterIds
-						bind:imageGenerationEnabled
-						bind:codeInterpreterEnabled
-						bind:webSearchEnabled
-						bind:atSelectedModel
-						bind:showCommands
-						bind:dragged
-						{pendingOAuthTools}
-						{toolServers}
-						{stopResponse}
-						{createMessagePair}
-						placeholder={$i18n.t('How can I help you today?')}
-						{onChange}
-						{onUpload}
-						{onWebSearchToggle}
-						on:submit={(e) => {
-							dispatch('submit', e.detail);
-						}}
-					/>
-				{/if}
+				<MessageInput
+					bind:this={messageInput}
+					{history}
+					{selectedModels}
+					bind:files
+					bind:prompt
+					bind:autoScroll
+					bind:selectedToolIds
+					bind:selectedFilterIds
+					bind:imageGenerationEnabled
+					bind:codeInterpreterEnabled
+					bind:webSearchEnabled
+					bind:atSelectedModel
+					bind:showCommands
+					bind:dragged
+					{pendingOAuthTools}
+					{toolServers}
+					{stopResponse}
+					{createMessagePair}
+					placeholder={$i18n.t('How can I help you today?')}
+					{onChange}
+					{onUpload}
+					on:submit={(e) => {
+						dispatch('submit', e.detail);
+					}}
+				/>
 			</div>
 		</div>
 	</div>

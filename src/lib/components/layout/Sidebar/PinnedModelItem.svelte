@@ -7,6 +7,7 @@
 
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import PinSlash from '$lib/components/icons/PinSlash.svelte';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
 
 	export let model = null;
 	export let shiftKey = false;
@@ -35,13 +36,11 @@
 			draggable="false"
 		>
 			<div class="self-center shrink-0">
-				<img
-					src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model.id}&lang=${$i18n.language}`}
-					class=" size-5 rounded-full -translate-x-[0.5px]"
+				<AuthProfileImage
+					{model}
+					lang={$i18n.language}
+					className=" size-5 rounded-full -translate-x-[0.5px]"
 					alt="logo"
-					on:error={(e) => {
-						e.currentTarget.src = '/favicon.png';
-					}}
 				/>
 			</div>
 

@@ -23,6 +23,8 @@
 	import ShareChatModal from '../chat/ShareChatModal.svelte';
 	import ModelSelector from '../chat/ModelSelector.svelte';
 	import Tooltip from '../common/Tooltip.svelte';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import Menu from '$lib/components/layout/Navbar/Menu.svelte';
 	import UserMenu from '$lib/components/layout/Sidebar/UserMenu.svelte';
 	import AdjustmentsHorizontal from '../icons/AdjustmentsHorizontal.svelte';
@@ -43,7 +45,6 @@
 	const i18n = getContext('i18n');
 
 	export let initNewChat: Function;
-	export let readOnly: boolean = false;
 	export let shareEnabled: boolean = false;
 	export let scrollTop = 0;
 	export let scrollToTop: (() => void) | null = null;
@@ -59,14 +60,6 @@
 	export let moveChatHandler: (id: string, folderId: string) => void;
 
 	let closedBannerIds = [];
-
-	const getDismissedBannerIds = (): string[] => {
-		try {
-			return JSON.parse(localStorage.getItem('dismissedBannerIds') ?? '[]');
-		} catch {
-			return [];
-		}
-	};
 
 	let showShareChatModal = false;
 	let showDownloadChatModal = false;
@@ -123,11 +116,7 @@
 			"
 				>
 					{#if showModelSelector}
-						<ModelSelector
-							bind:selectedModels
-							showSetDefault={!shareEnabled && !readOnly}
-							disabled={readOnly}
-						/>
+						<ModelSelector bind:selectedModels showSetDefault={!shareEnabled} />
 					{/if}
 				</div>
 
@@ -208,7 +197,6 @@
 						<Menu
 							{chat}
 							{shareEnabled}
-							{readOnly}
 							{scrollToTop}
 							shareHandler={() => {
 								showShareChatModal = !showShareChatModal;
@@ -259,20 +247,19 @@
 								}
 							}}
 						>
-							<button
-								type="button"
+							<div
 								class="select-none flex rounded-xl p-1.5 w-full hover:bg-gray-50 dark:hover:bg-gray-850 transition"
-								aria-label={$i18n.t('User menu')}
 							>
 								<div class=" self-center">
-									<img
-										src={`${WEBUI_API_BASE_URL}/users/${$user?.id}/profile/image`}
-										class="size-6 object-cover rounded-full"
+									<span class="sr-only">{$i18n.t('User menu')}</span>
+									<AuthProfileImage
+										userId={$user?.id}
+										fallback={DEFAULT_USER_IMAGE}
+										className="size-6 object-cover rounded-full"
 										alt=""
-										draggable="false"
 									/>
 								</div>
-							</button>
+							</div>
 						</UserMenu>
 					{/if}
 				</div>
@@ -289,9 +276,7 @@
 	<div class="absolute top-[100%] left-0 right-0 h-fit">
 		{#if !history.currentId && !$chatId && ($banners.length > 0 || ($config?.license_metadata?.type ?? null) === 'trial' || (($config?.license_metadata?.seats ?? null) !== null && $config?.user_count > $config?.license_metadata?.seats))}
 			<div class=" w-full z-30">
-				<div
-					class=" flex flex-col gap-1 w-full max-h-28 overflow-y-auto overscroll-contain md:max-h-none md:overflow-visible"
-				>
+				<div class=" flex flex-col gap-1 w-full">
 					{#if ($config?.license_metadata?.type ?? null) === 'trial'}
 						<Banner
 							banner={{
@@ -316,7 +301,7 @@
 						/>
 					{/if}
 
-					{#each $banners.filter((b) => ![...getDismissedBannerIds(), ...closedBannerIds].includes(b.id)) as banner (banner.id)}
+					{#each $banners.filter((b) => ![...JSON.parse(localStorage.getItem('dismissedBannerIds') ?? '[]'), ...closedBannerIds].includes(b.id)) as banner (banner.id)}
 						<Banner
 							{banner}
 							on:dismiss={(e) => {
@@ -326,9 +311,10 @@
 									localStorage.setItem(
 										'dismissedBannerIds',
 										JSON.stringify(
-											[bannerId, ...getDismissedBannerIds()].filter((id) =>
-												$banners.find((b) => b.id === id)
-											)
+											[
+												bannerId,
+												...JSON.parse(localStorage.getItem('dismissedBannerIds') ?? '[]')
+											].filter((id) => $banners.find((b) => b.id === id))
 										)
 									);
 								} else {
