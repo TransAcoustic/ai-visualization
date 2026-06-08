@@ -8,6 +8,7 @@
 
 	const dispatch = createEventDispatcher();
 
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
 	import { getChatList } from '$lib/apis/chats';
 	import { updateFolderById } from '$lib/apis/folders';
 
@@ -125,14 +126,11 @@
 											selectedModelIdx = modelIdx;
 										}}
 									>
-										<img
-											src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model?.id}&lang=${$i18n.language}`}
-											class=" size-9 @sm:size-10 rounded-full border-[1px] border-gray-100 dark:border-none"
-											aria-hidden="true"
-											draggable="false"
-											on:error={(e) => {
-												e.currentTarget.src = '/favicon.png';
-											}}
+										<AuthProfileImage
+											model={model}
+											lang={$i18n.language}
+											className=" size-9 @sm:size-10 rounded-full border-[1px] border-gray-100 dark:border-none"
+											alt=""
 										/>
 									</button>
 								</Tooltip>
