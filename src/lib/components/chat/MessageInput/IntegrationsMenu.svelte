@@ -25,6 +25,8 @@
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import Switch from '$lib/components/common/Switch.svelte';
 	import Spinner from '$lib/components/common/Spinner.svelte';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
+	import { DEFAULT_PROFILE_IMAGE } from '$lib/utils/profileImage';
 	import Wrench from '$lib/components/icons/Wrench.svelte';
 	import Keyframes from '$lib/components/icons/Keyframes.svelte';
 	import Sparkles from '$lib/components/icons/Sparkles.svelte';
@@ -213,13 +215,14 @@
 											<div class="shrink-0">
 												{#if filter?.icon}
 													<div class="size-4 items-center flex justify-center">
-														<img
+														<AuthImage
 															src={filter.icon}
-															class="size-3.5 {filter.icon.includes('data:image/svg')
+															fallback={DEFAULT_PROFILE_IMAGE}
+															className="size-3.5 {filter.icon.includes('data:image/svg')
 																? 'dark:invert-[80%]'
 																: ''}"
-															style="fill: currentColor;"
 															alt={filter.name}
+															loading={undefined}
 														/>
 													</div>
 												{:else}

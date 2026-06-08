@@ -17,7 +17,8 @@
 		settings
 	} from '$lib/stores';
 
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 
 	import Dropdown from '$lib/components/common/Dropdown.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
@@ -127,10 +128,11 @@
 			{#if profile}
 				<div class=" flex gap-3.5 w-full p-2.5 items-center">
 					<div class=" items-center flex shrink-0">
-						<img
-							src={`${WEBUI_API_BASE_URL}/users/${$user?.id}/profile/image`}
-							class=" size-10 object-cover rounded-full"
+						<AuthProfileImage
+							userId={$user?.id}
+							className=" size-10 object-cover rounded-full"
 							alt="profile"
+							fallback={DEFAULT_USER_IMAGE}
 						/>
 					</div>
 

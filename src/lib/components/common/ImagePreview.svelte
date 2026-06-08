@@ -6,6 +6,7 @@
 
 	import PanzoomContainer from '$lib/components/common/PanzoomContainer.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
 
 	export let show = false;
 	export let src = '';
@@ -161,7 +162,13 @@
 			</div>
 		</div>
 		<PanzoomContainer className="flex h-full max-h-full justify-center items-center z-0">
-			<img {src} {alt} class=" mx-auto h-full object-scale-down select-none" draggable="false" />
+			<AuthImage
+				{src}
+				{alt}
+				className=" mx-auto h-full object-scale-down select-none"
+				loading={undefined}
+				draggable="false"
+			/>
 		</PanzoomContainer>
 	</div>
 {/if}

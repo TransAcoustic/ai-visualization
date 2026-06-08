@@ -3,6 +3,7 @@
 	import ChevronUp from '$lib/components/icons/ChevronUp.svelte';
 	import Search from '$lib/components/icons/Search.svelte';
 	import Collapsible from '$lib/components/common/Collapsible.svelte';
+	import { DEFAULT_PROFILE_IMAGE, handleImageError } from '$lib/utils/profileImage';
 
 	export let status = { urls: [], query: '' };
 	let state = false;
@@ -69,6 +70,8 @@
 								src="https://www.google.com/s2/favicons?sz=32&domain={item.link}"
 								alt="{item?.title ?? item.link} favicon"
 								class="size-3.5"
+								data-fallback={DEFAULT_PROFILE_IMAGE}
+								on:error={handleImageError}
 							/>
 						</div>
 
@@ -109,6 +112,8 @@
 								src="https://www.google.com/s2/favicons?sz=32&domain={url}"
 								alt="{url} favicon"
 								class="size-3.5"
+								data-fallback={DEFAULT_PROFILE_IMAGE}
+								on:error={handleImageError}
 							/>
 						</div>
 

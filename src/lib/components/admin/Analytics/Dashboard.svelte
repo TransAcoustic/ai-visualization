@@ -15,7 +15,8 @@
 	import ChartLine from './ChartLine.svelte';
 	import AnalyticsModelModal from './AnalyticsModelModal.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import { formatNumber } from '$lib/utils';
 	import { goto } from '$app/navigation';
 
@@ -480,13 +481,10 @@
 								<td class="px-3 py-1 text-gray-400">{idx + 1}</td>
 								<td class="px-3 py-1 font-medium text-gray-900 dark:text-white">
 									<div class="flex items-center gap-2">
-										<img
-											src="{WEBUI_API_BASE_URL}/models/model/profile/image?id={model.model_id}"
+										<AuthProfileImage
+											model={{ id: model.model_id }}
 											alt={model.name}
-											class="size-5 rounded-full object-cover shrink-0"
-											on:error={(e) => {
-												e.target.src = '/favicon.png';
-											}}
+											className="size-5 rounded-full object-cover shrink-0"
 										/>
 										<span class="truncate max-w-[150px]">{model.name}</span>
 									</div>
@@ -588,13 +586,11 @@
 								<td class="px-3 py-1 text-gray-400">{idx + 1}</td>
 								<td class="px-3 py-1 font-medium text-gray-900 dark:text-white">
 									<div class="flex items-center gap-2">
-										<img
-											src="{WEBUI_API_BASE_URL}/users/{user.user_id}/profile/image"
+										<AuthProfileImage
+											userId={user.user_id}
 											alt={user.name || 'User'}
-											class="size-5 rounded-full object-cover shrink-0"
-											on:error={(e) => {
-												e.target.src = '/user.png';
-											}}
+											className="size-5 rounded-full object-cover shrink-0"
+											fallback={DEFAULT_USER_IMAGE}
 										/>
 										<span class="truncate max-w-[150px]"
 											>{user.name || user.email || user.user_id.substring(0, 8)}</span

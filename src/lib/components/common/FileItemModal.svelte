@@ -6,6 +6,7 @@
 
 	import { formatFileSize, getLineCount } from '$lib/utils';
 	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
 	import { settings } from '$lib/stores';
 	import { getKnowledgeById } from '$lib/apis/knowledge';
 	import { getFileById, getFileContentById } from '$lib/apis/files';
@@ -430,10 +431,10 @@
 							</Tooltip>
 						</div>
 						<PanzoomContainer bind:this={panzoomRef}>
-							<img
+							<AuthImage
 								src={`${WEBUI_API_BASE_URL}/files/${item.id}/content`}
 								alt={item?.name ?? 'Image'}
-								class="w-full object-contain rounded-lg"
+								className="w-full object-contain rounded-lg"
 								loading="lazy"
 								draggable="false"
 							/>

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import { WEBUI_NAME, config, user as _user, showSidebar } from '$lib/stores';
 	import { goto } from '$app/navigation';
 	import { onMount, getContext } from 'svelte';
@@ -215,10 +216,11 @@
 								<div class="px-2 py-1.5 font-medium text-gray-900 dark:text-white flex-1">
 									<div class="flex items-center gap-2">
 										<ProfilePreview {user} side="right" align="center" sideOffset={6}>
-											<img
-												class="rounded-2xl w-6 h-6 object-cover flex-shrink-0"
-												src={`${WEBUI_API_BASE_URL}/users/${user.id}/profile/image`}
+											<AuthProfileImage
+												userId={user.id}
+												className="rounded-2xl w-6 h-6 object-cover flex-shrink-0"
 												alt="user"
+												fallback={DEFAULT_USER_IMAGE}
 											/>
 										</ProfilePreview>
 										<Tooltip content={user.email} placement="top-start">

@@ -23,7 +23,8 @@
 		removeReaction,
 		updateMessage
 	} from '$lib/apis/channels';
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 
 	const i18n = getContext('i18n');
 
@@ -79,13 +80,14 @@
 						{#if channel?.type === 'dm'}
 							<div class="flex ml-[1px] mr-0.5">
 								{#each channel.users.filter((u) => u.id !== $user?.id).slice(0, 2) as u, index}
-									<img
-										src={`${WEBUI_API_BASE_URL}/users/${u.id}/profile/image`}
+									<AuthProfileImage
+										userId={u.id}
 										alt={u.name}
-										class=" size-7.5 rounded-full border-2 border-white dark:border-gray-900 {index ===
+										className=" size-7.5 rounded-full border-2 border-white dark:border-gray-900 {index ===
 										1
 											? '-ml-2.5'
 											: ''}"
+										fallback={DEFAULT_USER_IMAGE}
 									/>
 								{/each}
 							</div>

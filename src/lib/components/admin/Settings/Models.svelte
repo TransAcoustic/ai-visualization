@@ -42,7 +42,7 @@
 	import Eye from '$lib/components/icons/Eye.svelte';
 	import CheckCircle from '$lib/components/icons/CheckCircle.svelte';
 	import Minus from '$lib/components/icons/Minus.svelte';
-	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
 	import { goto } from '$app/navigation';
 
 	import Dropdown from '$lib/components/common/Dropdown.svelte';
@@ -616,13 +616,10 @@
 											? ''
 											: 'opacity-50 dark:opacity-50'} "
 									>
-										<img
-											src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model.id}`}
+										<AuthProfileImage
+											{model}
 											alt="modelfile profile"
-											class=" rounded-full w-full h-auto object-cover"
-											on:error={(e) => {
-												e.target.src = '/favicon.png';
-											}}
+											className=" rounded-full w-full h-auto object-cover"
 										/>
 									</div>
 								</div>

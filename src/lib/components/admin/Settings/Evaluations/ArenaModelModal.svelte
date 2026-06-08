@@ -14,6 +14,8 @@
 	import ConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
 	import { WEBUI_BASE_URL } from '$lib/constants';
+	import AuthImage from '$lib/components/common/AuthImage.svelte';
+	import { DEFAULT_PROFILE_IMAGE } from '$lib/utils/profileImage';
 
 	export let show = false;
 	export let edit = false;
@@ -37,7 +39,7 @@
 		}
 	};
 
-	let profileImageUrl = `${WEBUI_BASE_URL}/favicon.png`;
+	let profileImageUrl = `${WEBUI_BASE_URL}/static/favicon.png`;
 	let description = '';
 
 	let selectedModelId = '';
@@ -93,7 +95,7 @@
 
 		name = '';
 		id = '';
-		profileImageUrl = `${WEBUI_BASE_URL}/favicon.png`;
+		profileImageUrl = `${WEBUI_BASE_URL}/static/favicon.png`;
 		description = '';
 		modelIds = [];
 		selectedModelId = '';
@@ -228,10 +230,12 @@
 									imageInputElement.click();
 								}}
 							>
-								<img
+								<AuthImage
 									src={profileImageUrl}
-									class="size-16 rounded-full object-cover shrink-0"
+									fallback={DEFAULT_PROFILE_IMAGE}
+									className="size-16 rounded-full object-cover shrink-0"
 									alt={$i18n.t('Profile')}
+									loading={undefined}
 								/>
 
 								<div

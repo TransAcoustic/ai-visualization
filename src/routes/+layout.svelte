@@ -777,7 +777,7 @@
 					if ($settings?.notificationEnabled ?? false) {
 						new Notification(`${title} • devBim`, {
 							body: data?.content,
-							icon: `${WEBUI_API_BASE_URL}/users/${data?.user?.id}/profile/image`
+							icon: `${WEBUI_BASE_URL}/static/favicon.png`
 						});
 					}
 				}

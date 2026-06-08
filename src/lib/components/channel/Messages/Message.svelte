@@ -20,7 +20,8 @@
 	import { getMessageData } from '$lib/apis/channels';
 
 	import Markdown from '$lib/components/chat/Messages/Markdown.svelte';
-	import ProfileImage from '$lib/components/chat/Messages/ProfileImage.svelte';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import Name from '$lib/components/chat/Messages/Name.svelte';
 	import ConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
 	import GarbageBin from '$lib/components/icons/GarbageBin.svelte';
@@ -332,22 +333,24 @@
 						}}
 					>
 						{#if message?.reply_to_message?.meta?.model_id}
-							<img
-								src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${message.reply_to_message.meta.model_id}`}
+							<AuthProfileImage
+								model={{ id: message.reply_to_message.meta.model_id }}
 								alt={message.reply_to_message.meta.model_name ??
 									message.reply_to_message.meta.model_id}
-								class="size-4 ml-0.5 rounded-full object-cover"
-								on:error={(e) => {
-									e.currentTarget.src = '/favicon.png';
-								}}
+								className="size-4 ml-0.5 rounded-full object-cover"
+							/>
+						{:else if message.reply_to_message.user?.role === 'webhook'}
+							<AuthProfileImage
+								webhookId={message.reply_to_message.user?.id}
+								alt={message.reply_to_message.user?.name ?? $i18n.t('Unknown User')}
+								className="size-4 ml-0.5 rounded-full object-cover"
 							/>
 						{:else}
-							<img
-								src={message.reply_to_message.user?.role === 'webhook'
-									? `${WEBUI_API_BASE_URL}/channels/webhooks/${message.reply_to_message.user?.id}/profile/image`
-									: `${WEBUI_API_BASE_URL}/users/${message.reply_to_message.user?.id}/profile/image`}
+							<AuthProfileImage
+								userId={message.reply_to_message.user?.id}
 								alt={message.reply_to_message.user?.name ?? $i18n.t('Unknown User')}
-								class="size-4 ml-0.5 rounded-full object-cover"
+								className="size-4 ml-0.5 rounded-full object-cover"
+								fallback={DEFAULT_USER_IMAGE}
 							/>
 						{/if}
 
@@ -376,24 +379,22 @@
 				<div class={`shrink-0 mr-1 w-9`}>
 					{#if showUserProfile}
 						{#if message?.meta?.model_id}
-							<img
-								src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${message.meta.model_id}`}
+							<AuthProfileImage
+								model={{ id: message.meta.model_id }}
 								alt={message.meta.model_name ?? message.meta.model_id}
-								class="size-8 translate-y-1 ml-0.5 object-cover rounded-full"
-								on:error={(e) => {
-									e.currentTarget.src = '/favicon.png';
-								}}
+								className="size-8 translate-y-1 ml-0.5 object-cover rounded-full"
 							/>
 						{:else if message.user?.role === 'webhook'}
-							<ProfileImage
-								src={`${WEBUI_API_BASE_URL}/channels/webhooks/${message.user?.id}/profile/image`}
-								className={'size-8 ml-0.5'}
+							<AuthProfileImage
+								webhookId={message.user?.id}
+								className="size-8 ml-0.5"
 							/>
 						{:else}
 							<ProfilePreview user={message.user}>
-								<ProfileImage
-									src={`${WEBUI_API_BASE_URL}/users/${message.user?.id}/profile/image`}
-									className={'size-8 ml-0.5'}
+								<AuthProfileImage
+									userId={message.user?.id}
+									className="size-8 ml-0.5"
+									fallback={DEFAULT_USER_IMAGE}
 								/>
 							</ProfilePreview>
 						{/if}

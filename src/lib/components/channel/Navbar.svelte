@@ -7,7 +7,8 @@
 	import { slide } from 'svelte/transition';
 	import { page } from '$app/stores';
 
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 
 	import UserMenu from '$lib/components/layout/Sidebar/UserMenu.svelte';
 	import PencilSquare from '../icons/PencilSquare.svelte';
@@ -98,13 +99,14 @@
 								{@const channelMembers = channel.users.filter((u) => u.id !== $user?.id)}
 								<div class="flex mr-1.5 relative">
 									{#each channelMembers.slice(0, 2) as u, index}
-										<img
-											src={`${WEBUI_API_BASE_URL}/users/${u.id}/profile/image`}
+										<AuthProfileImage
+											userId={u.id}
 											alt={u.name}
-											class=" size-6.5 rounded-full border-2 border-white dark:border-gray-900 {index ===
+											className=" size-6.5 rounded-full border-2 border-white dark:border-gray-900 {index ===
 											1
 												? '-ml-3'
 												: ''}"
+											fallback={DEFAULT_USER_IMAGE}
 										/>
 									{/each}
 
@@ -211,10 +213,11 @@
 								aria-label="User Menu"
 							>
 								<div class=" self-center">
-									<img
-										src={`${WEBUI_API_BASE_URL}/users/${$user?.id}/profile/image`}
-										class="size-6 object-cover rounded-full"
+									<AuthProfileImage
+										userId={$user?.id}
+										className="size-6 object-cover rounded-full"
 										alt="User profile"
+										fallback={DEFAULT_USER_IMAGE}
 										draggable="false"
 									/>
 								</div>

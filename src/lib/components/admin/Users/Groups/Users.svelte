@@ -15,6 +15,8 @@
 	import { WEBUI_API_BASE_URL } from '$lib/constants';
 
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import Checkbox from '$lib/components/common/Checkbox.svelte';
 	import Badge from '$lib/components/common/Badge.svelte';
 	import Search from '$lib/components/icons/Search.svelte';
@@ -251,9 +253,10 @@
 								<td class="px-3 py-1 font-medium text-gray-900 dark:text-white max-w-48">
 									<Tooltip content={user.email} placement="top-start">
 										<div class="flex items-center">
-											<img
-												class="rounded-full w-6 h-6 object-cover mr-2.5 flex-shrink-0"
-												src={`${WEBUI_API_BASE_URL}/users/${user.id}/profile/image`}
+											<AuthProfileImage
+												userId={user.id}
+												fallback={DEFAULT_USER_IMAGE}
+												className="rounded-full w-6 h-6 object-cover mr-2.5 flex-shrink-0"
 												alt="user"
 											/>
 

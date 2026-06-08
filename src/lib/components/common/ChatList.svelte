@@ -2,7 +2,8 @@
 	import { getContext } from 'svelte';
 	import dayjs from 'dayjs';
 	import calendar from 'dayjs/plugin/calendar';
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import Loader from '$lib/components/common/Loader.svelte';
 	import ChevronUp from '$lib/components/icons/ChevronUp.svelte';
@@ -139,10 +140,11 @@
 				>
 					{#if showUserInfo && chat.user_id}
 						<div class="w-32 shrink-0 flex items-center gap-2">
-							<img
-								src="{WEBUI_API_BASE_URL}/users/{chat.user_id}/profile/image"
+							<AuthProfileImage
+								userId={chat.user_id}
 								alt={chat.user_name || 'User'}
-								class="size-5 rounded-full object-cover shrink-0"
+								className="size-5 rounded-full object-cover shrink-0"
+								fallback={DEFAULT_USER_IMAGE}
 							/>
 							<span class="text-xs text-gray-600 dark:text-gray-400 truncate"
 								>{chat.user_name || 'Unknown'}</span

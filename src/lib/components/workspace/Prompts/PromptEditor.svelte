@@ -26,6 +26,8 @@
 	import PromptHistoryMenu from './PromptHistoryMenu.svelte';
 	import Badge from '$lib/components/common/Badge.svelte';
 	import Tags from '$lib/components/common/Tags.svelte';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 
 	dayjs.extend(localizedFormat);
 
@@ -655,11 +657,11 @@
 							<!-- User + Time -->
 							<div class="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
 								{#if entry.user}
-									<img
-										src={`/api/v1/users/${entry.user.id}/profile/image`}
+									<AuthProfileImage
+										userId={entry.user.id}
 										alt={entry.user.name}
-										class="size-3 rounded-full mr-0.5"
-										on:error={(e) => (e.target.src = '/user.png')}
+										className="size-3 rounded-full mr-0.5"
+										fallback={DEFAULT_USER_IMAGE}
 									/>
 									<span class="truncate">{entry.user.name}</span>
 									<span>•</span>

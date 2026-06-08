@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
 	import { Handle, Position, type NodeProps } from '@xyflow/svelte';
 	import { getContext } from 'svelte';
 
-	import ProfileImage from '../Messages/ProfileImage.svelte';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import Heart from '$lib/components/icons/Heart.svelte';
 	import { getOutputText } from '../Messages/structuredOutput';
@@ -29,9 +29,10 @@
 	>
 		{#if data.message.role === 'user'}
 			<div class="flex w-full">
-				<ProfileImage
-					src={`${WEBUI_API_BASE_URL}/users/${data.user.id}/profile/image`}
-					className={'size-5 -translate-y-[1px] flex-shrink-0'}
+				<AuthProfileImage
+					userId={data.user.id}
+					className="size-5 -translate-y-[1px] flex-shrink-0"
+					fallback={DEFAULT_USER_IMAGE}
 				/>
 				<div class="ml-2">
 					<div class=" flex justify-between items-center">
@@ -49,9 +50,10 @@
 			</div>
 		{:else}
 			<div class="flex w-full">
-				<ProfileImage
-					src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${data.model?.id ?? data.message.model}&lang=${$i18n.language}`}
-					className={'size-5 -translate-y-[1px] flex-shrink-0'}
+				<AuthProfileImage
+					model={data.model ?? { id: data.message.model }}
+					lang={$i18n.language}
+					className="size-5 -translate-y-[1px] flex-shrink-0"
 				/>
 
 				<div class="ml-2">

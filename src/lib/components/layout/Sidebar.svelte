@@ -35,8 +35,6 @@
 
 	const i18n = getContext('i18n');
 
-	$: canImportChats = $user?.role === 'admin' || ($user?.permissions?.chat?.import ?? true);
-
 	import {
 		getChatList,
 		getAllTags,
@@ -48,17 +46,14 @@
 		deleteAllChats,
 		getChatListBySearchText
 	} from '$lib/apis/chats';
-	import {
-		createNewFolder,
-		getFolders,
-		getSharedFolders,
-		updateFolderParentIdById
-	} from '$lib/apis/folders';
+	import { createNewFolder, getFolders, updateFolderParentIdById } from '$lib/apis/folders';
 	import { createNewNote, getPinnedNoteList, toggleNotePinnedStatusById } from '$lib/apis/notes';
 	import { updateUserSettings } from '$lib/apis/users';
 	import { checkActiveChats } from '$lib/apis/tasks';
 	import { createNoteHandler } from '$lib/components/notes/utils';
-	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
+	import { WEBUI_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 
 	import ArchivedChatsModal from './ArchivedChatsModal.svelte';
 	import UserMenu from './Sidebar/UserMenu.svelte';
@@ -68,7 +63,6 @@
 	import Folder from '../common/Folder.svelte';
 	import Tooltip from '../common/Tooltip.svelte';
 	import Folders from './Sidebar/Folders.svelte';
-	import SharedFolderItem from './Sidebar/SharedFolderItem.svelte';
 	import { getChannels, createNewChannel } from '$lib/apis/channels';
 	import ChannelModal from './Sidebar/ChannelModal.svelte';
 	import ChannelItem from './Sidebar/ChannelItem.svelte';
@@ -78,7 +72,6 @@
 	import FolderModal from './Sidebar/Folders/FolderModal.svelte';
 	import Sidebar from '../icons/Sidebar.svelte';
 	import PinnedModelList from './Sidebar/PinnedModelList.svelte';
-	import PinnedNoteList from './Sidebar/PinnedNoteList.svelte';
 	import Note from '../icons/Note.svelte';
 	import Code from '../icons/Code.svelte';
 	import { slide } from 'svelte/transition';
@@ -107,14 +100,11 @@
 	let showPinnedNotes = false;
 	let showChannels = false;
 	let showFolders = false;
-	let showSharedFolders = false;
 
 	let folders = {};
 	let folderRegistry = {};
 
 	let newFolderId = null;
-
-	let sharedFolders: any[] = [];
 
 	$: pinnedItems = $settings?.pinnedMenuItems ?? DEFAULT_PINNED_ITEMS;
 
@@ -131,8 +121,7 @@
 					$user?.permissions?.workspace?.models ||
 					$user?.permissions?.workspace?.knowledge ||
 					$user?.permissions?.workspace?.prompts ||
-					$user?.permissions?.workspace?.tools ||
-					$user?.permissions?.workspace?.skills
+					$user?.permissions?.workspace?.tools
 				);
 			case 'automations':
 				return (
@@ -227,31 +216,6 @@
 				});
 			}
 		}
-
-		// Merge shared folders into the same structure
-		try {
-			sharedFolders = await getSharedFolders(localStorage.token);
-		} catch (e) {
-			sharedFolders = [];
-		}
-
-		for (const sf of sharedFolders) {
-			if (folders[sf.id]) continue; // Already owned by user
-			folders[sf.id] = { ...sf, shared: true };
-		}
-
-		// Build parent-child relationships for shared folders
-		for (const sf of sharedFolders) {
-			if (folders[sf.id]?.shared && sf.parent_id && folders[sf.parent_id]) {
-				folders[sf.parent_id].childrenIds = folders[sf.parent_id].childrenIds
-					? [...new Set([...folders[sf.parent_id].childrenIds, sf.id])]
-					: [sf.id];
-			}
-		}
-	};
-
-	const initSharedFolders = async () => {
-		await initFolders();
 	};
 
 	const createFolder = async ({ name, data, parent_id }) => {
@@ -328,19 +292,18 @@
 		scrollPaginationEnabled.set(false);
 
 		initFolders();
-		initSharedFolders();
 		await Promise.all([
-			(async () => {
+			await (async () => {
 				console.log('Init tags');
 				const _tags = await getAllTags(localStorage.token);
 				tags.set(_tags);
 			})(),
-			(async () => {
+			await (async () => {
 				console.log('Init pinned chats');
 				const _pinnedChats = await getPinnedChatList(localStorage.token);
 				pinnedChats.set(_pinnedChats);
 			})(),
-			(async () => {
+			await (async () => {
 				if (
 					$config?.features?.enable_notes &&
 					($user?.role === 'admin' || ($user?.permissions?.features?.notes ?? true))
@@ -350,7 +313,7 @@
 					pinnedNotes.set(_pinnedNotes);
 				}
 			})(),
-			(async () => {
+			await (async () => {
 				console.log('Init chat list');
 				const _chats = await getChatList(localStorage.token, $currentChatPage);
 				await chats.set(_chats);
@@ -380,11 +343,6 @@
 	};
 
 	const importChatHandler = async (items, pinned = false, folderId = null) => {
-		if (!canImportChats) {
-			toast.error($i18n.t('Access prohibited'));
-			return;
-		}
-
 		console.log('importChatHandler', items, pinned, folderId);
 		for (const item of items) {
 			console.log(item);
@@ -559,21 +517,8 @@
 		sidebarWidth.subscribe((w) => {
 			document.documentElement.style.setProperty('--sidebar-width', `${w}px`);
 		});
-<<<<<<< HEAD
 
-<<<<<<< HEAD
 		showSidebar.set(!$mobile ? localStorage.sidebar === 'true' : false);
-=======
-		// Block sidebar for non-admin users
-		if ($user?.role !== 'admin') {
-			await showSidebar.set(false);
-		} else {
-			await showSidebar.set(!$mobile ? localStorage.sidebar === 'true' : false);
-		}
->>>>>>> 7781992ed (fix: dockerfile)
-=======
-			await showSidebar.set(!$mobile ? localStorage.sidebar === 'true' : false);
->>>>>>> 8aadc3c69 (fixes)
 
 		const unsubscribers = [
 			mobile.subscribe((value) => {
@@ -861,7 +806,6 @@
 						}}
 					>
 						<div class=" self-center flex items-center justify-center size-9">
-
 							<Sidebar className="size-5 hidden group-hover:flex" />
 						</div>
 					</button>
@@ -1002,17 +946,15 @@
 								}
 							}}
 						>
-							<button
-								type="button"
+							<div
 								class=" cursor-pointer flex rounded-xl hover:bg-gray-100 dark:hover:bg-gray-850 transition group"
-								aria-label={$i18n.t('User menu')}
 							>
 								<div class="self-center relative">
-									<img
-										src={`${WEBUI_API_BASE_URL}/users/${$user?.id}/profile/image`}
-										class=" size-7 object-cover rounded-full"
+									<AuthProfileImage
+										userId={$user?.id}
+										className=" size-7 object-cover rounded-full"
 										alt={$i18n.t('Open User Profile Menu')}
-										aria-label={$i18n.t('Open User Profile Menu')}
+										fallback={DEFAULT_USER_IMAGE}
 									/>
 
 									{#if $config?.features?.enable_user_status}
@@ -1027,7 +969,7 @@
 										</div>
 									{/if}
 								</div>
-							</button>
+							</div>
 						</UserMenu>
 					{/if}
 				</div>
@@ -1060,6 +1002,19 @@
 			<div
 				class="sidebar px-[0.5625rem] pt-2 pb-1.5 flex justify-between space-x-1 text-gray-600 dark:text-gray-400 sticky top-0 z-10 -mb-3"
 			>
+				<a
+					class="flex items-center rounded-xl size-8.5 h-full justify-center hover:bg-gray-100/50 dark:hover:bg-gray-850/50 transition no-drag-region"
+					href="/"
+					draggable="false"
+					on:click={newChatHandler}
+				>
+					<img
+						crossorigin="anonymous"
+						src="{WEBUI_BASE_URL}/static/favicon.png"
+						class="sidebar-new-chat-icon size-6 rounded-full"
+						alt=""
+					/>
+				</a>
 
 				<a href="/" class="flex flex-1 px-0.5" on:click={newChatHandler}>
 					<div
@@ -1258,7 +1213,51 @@
 						}}
 						onAddLabel={$i18n.t('New Note')}
 					>
-						<PinnedNoteList bind:selectedChatId />
+						<div class="mt-0.5 pb-1.5">
+							{#each $pinnedNotes as note (note.id)}
+								<a
+									class="w-full flex items-center gap-2.5 rounded-xl px-2.5 py-1.5 hover:bg-gray-100 dark:hover:bg-gray-900 transition group text-sm"
+									href={`/notes/${note.id}`}
+									on:click={() => {
+										itemClickHandler();
+									}}
+									draggable="false"
+								>
+									<div class="self-center">
+										<Note className="size-4" strokeWidth="2" />
+									</div>
+									<div class="flex-1 text-ellipsis line-clamp-1">
+										{note.title}
+									</div>
+									<button
+										class="invisible group-hover:visible self-center p-0.5 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg transition"
+										on:click|preventDefault|stopPropagation={async () => {
+											await toggleNotePinnedStatusById(localStorage.token, note.id);
+											const _pinnedNotes = await getPinnedNoteList(localStorage.token).catch(
+												() => []
+											);
+											pinnedNotes.set(_pinnedNotes);
+										}}
+										aria-label={$i18n.t('Unpin')}
+									>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke-width="2"
+											stroke="currentColor"
+											class="size-3.5"
+										>
+											<path
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												d="M6 18 18 6M6 6l12 12"
+											/>
+										</svg>
+									</button>
+								</a>
+							{/each}
+						</div>
 					</Folder>
 				{/if}
 
@@ -1370,11 +1369,6 @@
 								return null;
 							});
 							if (!chat && item) {
-								if (!canImportChats) {
-									toast.error($i18n.t('Access prohibited'));
-									return;
-								}
-
 								chat = await importChats(localStorage.token, [
 									{
 										chat: item.chat,
@@ -1441,11 +1435,6 @@
 												return null;
 											});
 											if (!chat && item) {
-												if (!canImportChats) {
-													toast.error($i18n.t('Access prohibited'));
-													return;
-												}
-
 												chat = await importChats(localStorage.token, [
 													{
 														chat: item.chat,
@@ -1619,17 +1608,15 @@
 								}
 							}}
 						>
-							<button
-								type="button"
+							<div
 								class=" flex items-center rounded-2xl py-2 px-1.5 w-full hover:bg-gray-100/50 dark:hover:bg-gray-900/50 transition"
-								aria-label={$i18n.t('User menu')}
 							>
-								<div class=" self-center mr-3 relative flex-shrink-0">
-									<img
-										src={`${WEBUI_API_BASE_URL}/users/${$user?.id}/profile/image`}
-										class=" size-7 object-cover rounded-full"
+								<div class=" self-center mr-3 relative">
+									<AuthProfileImage
+										userId={$user?.id}
+										className=" size-7 object-cover rounded-full"
 										alt={$i18n.t('Open User Profile Menu')}
-										aria-label={$i18n.t('Open User Profile Menu')}
+										fallback={DEFAULT_USER_IMAGE}
 									/>
 
 									{#if $config?.features?.enable_user_status}
@@ -1644,8 +1631,8 @@
 										</div>
 									{/if}
 								</div>
-								<div class=" self-center font-medium truncate">{$user?.name}</div>
-							</button>
+								<div class=" self-center font-medium">{$user?.name}</div>
+							</div>
 						</UserMenu>
 					{/if}
 				</div>

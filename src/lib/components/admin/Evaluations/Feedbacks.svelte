@@ -29,7 +29,8 @@
 
 	import ChevronUp from '$lib/components/icons/ChevronUp.svelte';
 	import ChevronDown from '$lib/components/icons/ChevronDown.svelte';
-	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
+	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import { config } from '$lib/stores';
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import Select from '$lib/components/common/Select.svelte';
@@ -437,10 +438,11 @@
 									<div class="flex justify-center">
 										<Tooltip content={feedback?.user?.name}>
 											<div class="shrink-0">
-												<img
-													src={`${WEBUI_API_BASE_URL}/users/${feedback.user.id}/profile/image`}
+												<AuthProfileImage
+													userId={feedback.user.id}
 													alt={feedback?.user?.name}
-													class="size-5 rounded-full object-cover shrink-0"
+													className="size-5 rounded-full object-cover shrink-0"
+													fallback={DEFAULT_USER_IMAGE}
 												/>
 											</div>
 										</Tooltip>

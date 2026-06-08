@@ -2,7 +2,7 @@
 	import { getContext } from 'svelte';
 
 	import { models } from '$lib/stores';
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
 
 	import Dropdown from '$lib/components/common/Dropdown.svelte';
 	import Search from '$lib/components/icons/Search.svelte';
@@ -102,14 +102,11 @@
 					}}
 				>
 					<div class="flex text-black dark:text-gray-100 line-clamp-1">
-						<img
-							src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${encodeURIComponent(model.id)}`}
+						<AuthProfileImage
+							{model}
 							alt={model?.name ?? model.id}
-							class="rounded-full size-5 items-center mr-2"
+							className="rounded-full size-5 items-center mr-2"
 							loading="lazy"
-							on:error={(e) => {
-								e.currentTarget.src = '/favicon.png';
-							}}
 						/>
 						<div class="truncate">
 							{model.name}
