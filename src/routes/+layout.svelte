@@ -504,13 +504,6 @@
 				unstyled: true
 			});
 
-<<<<<<< HEAD
-			if ($isLastActiveTab) {
-				if ($settings?.notificationEnabled ?? false) {
-					new Notification(`${data.title} • Open WebUI`, {
-						body: timeStr,
-						icon: `${WEBUI_BASE_URL}/static/favicon.png`
-=======
 						const audio = new Audio(`/audio/notification.mp3`);
 						audio.play().finally(() => {
 							// Ensure the global state is reset after the sound finishes
@@ -537,7 +530,6 @@
 						},
 						duration: 15000,
 						unstyled: true
->>>>>>> 7781992ed (fix: dockerfile)
 					});
 				}
 			}
@@ -667,8 +659,8 @@
 
 					if ($isLastActiveTab) {
 						if ($settings?.notificationEnabled ?? false) {
-							new Notification(`${displayTitle} • Open WebUI`, {
-								body: contentPreview,
+							new Notification(`${displayTitle} • devBim`, {
+								body: content,
 								icon: `${WEBUI_BASE_URL}/static/favicon.png`
 							});
 						}

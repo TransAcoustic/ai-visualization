@@ -427,15 +427,9 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-<<<<<<< HEAD
-    title='Open WebUI',
-    docs_url='/docs' if ENV == 'dev' else None,
-    openapi_url='/openapi.json' if ENV == 'dev' else None,
-=======
     title="devBim",
     docs_url="/docs" if ENV == "dev" else None,
     openapi_url="/openapi.json" if ENV == "dev" else None,
->>>>>>> 7781992ed (fix: dockerfile)
     redoc_url=None,
     lifespan=lifespan,
 )

@@ -13,7 +13,6 @@
 	"{{COUNT}} Available Tools": "",
 	"{{COUNT}} characters": "",
 	"{{COUNT}} extracted lines": "",
-<<<<<<< HEAD
 	"{{COUNT}} files": "",
 	"{{count}} files selected. Only new and modified files will be uploaded. Deleted files will be removed. The folder structure will be mirrored. Continue?_one": "",
 	"{{count}} files selected. Only new and modified files will be uploaded. Deleted files will be removed. The folder structure will be mirrored. Continue?_other": "",
@@ -21,19 +20,14 @@
 	"{{count}} filters_other": "",
 	"{{count}} groups_one": "",
 	"{{count}} groups_other": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"{{COUNT}} hidden lines": "",
 	"{{COUNT}} members": "",
 	"{{count}} of {{total}} accessible_one": "",
 	"{{count}} of {{total}} accessible_other": "",
 	"{{COUNT}} Replies": "",
-<<<<<<< HEAD
 	"{{COUNT}} Rows": "",
 	"{{count}} selected_one": "",
 	"{{count}} selected_other": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"{{COUNT}} Sources": "",
 	"{{count}} users_one": "",
 	"{{count}} users_other": "",
@@ -47,18 +41,14 @@
 	"{{label}} must be a JSON object": "",
 	"{{LOCALIZED_DATE}} at {{LOCALIZED_TIME}}": "",
 	"{{model}} download has been canceled": "",
-<<<<<<< HEAD
 	"{{modelName}} profile image": "",
 	"{{NAMES}} reacted with {{REACTION}}": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"{{user}}'s Chats": "",
 	"{{webUIName}} Backend Required": "",
 	"*Prompt node ID(s) are required for image generation": "",
 	"1 group": "",
 	"1 hour before": "",
 	"1 Source": "",
-<<<<<<< HEAD
 	"1 user": "",
 	"10 minutes before": "",
 	"15 minutes before": "",
@@ -67,8 +57,6 @@
 	"5 minutes before": "",
 	"A collaboration channel where people join as members": "",
 	"A discussion channel where access is controlled by groups and permissions": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"A new version (v{{LATEST_VERSION}}) is now available.": "",
 	"A task model is used when performing tasks such as generating titles for chats and web search queries": "",
 	"a user": "",
@@ -104,24 +92,17 @@
 	"Add Content": "",
 	"Add content here": "",
 	"Add Custom Parameter": "",
-<<<<<<< HEAD
 	"Add Custom Prompt": "",
 	"Add description": "",
-=======
-	"Add custom prompt": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Add Details": "",
 	"Add durable context for future chats": "",
 	"Add Files": "",
-<<<<<<< HEAD
 	"Add Image": "",
 	"Add Knowledge Connection": "",
 	"Add location": "",
 	"Add Member": "",
 	"Add Members": "",
-=======
 	"Add Group": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Add Memory": "",
 	"Add Model": "",
 	"Add Reaction": "",
@@ -133,7 +114,6 @@
 	"Add to favorites": "",
 	"Add User": "",
 	"Add User Group": "",
-<<<<<<< HEAD
 	"Add webhook": "",
 	"Add webpage": "",
 	"Add your Open Terminal URL and API key in Settings → Integrations.": "",
@@ -142,10 +122,8 @@
 	"Additional feedback comments": "",
 	"Additional Parameters": "",
 	"Adds filenames, titles, sections, and snippets into the BM25 text to improve lexical recall.": "",
-=======
 	"Additional Config": "",
 	"Additional configuration options for marker. This should be a JSON string with key-value pairs. For example, '{\"key\": \"value\"}'. Supported keys include: disable_links, keep_pageheader_in_output, keep_pagefooter_in_output, filter_blank_pages, drop_repeated_text, layout_coverage_threshold, merge_threshold, height_tolerance, gap_threshold, image_threshold, min_line_length, level_count, default_level": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Adjusting these settings will apply changes universally to all users.": "",
 	"admin": "",
 	"Admin": "",
@@ -159,15 +137,12 @@
 	"Advanced Params": "",
 	"AI": "",
 	"All": "",
-<<<<<<< HEAD
 	"All chats have been unarchived.": "",
 	"All day": "",
 	"All events": "",
 	"All models are now hidden": "",
 	"All models are now visible": "",
-=======
 	"All Documents": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"All models deleted successfully": "",
 	"All shared chats have been unshared.": "",
 	"All Sources": "",
@@ -227,13 +202,10 @@
 	"API Key created.": "",
 	"API Key Endpoint Restrictions": "",
 	"API keys": "",
-<<<<<<< HEAD
 	"API Keys": "",
 	"API Mode": "",
 	"API Timeout": "",
 	"API Type": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"API Version": "",
 	"API Version is required": "",
 	"Application DN": "",
@@ -247,12 +219,9 @@
 	"archived-chat-export": "",
 	"Are you sure you want to archive all chats? This action cannot be undone.": "",
 	"Are you sure you want to clear all memories? This action cannot be undone.": "",
-<<<<<<< HEAD
 	"Are you sure you want to delete \"{{NAME}}\"?": "",
 	"Are you sure you want to delete **{{modelName}}**?": "",
 	"Are you sure you want to delete all chats? This action cannot be undone.": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Are you sure you want to delete this channel?": "",
 	"Are you sure you want to delete this connection? This action cannot be undone.": "",
 	"Are you sure you want to delete this directory?": "",
@@ -271,14 +240,10 @@
 	"Ask a test question": "",
 	"Ask this knowledge source a test question": "",
 	"Assistant": "",
-<<<<<<< HEAD
 	"Async Embedding Processing": "",
 	"At time of event": "",
 	"Attach File From Knowledge": "",
 	"Attach Files": "",
-=======
-	"Attach file from knowledge": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Attach Knowledge": "",
 	"Attach Notes": "",
 	"Attention to detail": "",
@@ -292,11 +257,8 @@
 	"Authenticate": "",
 	"Authentication": "",
 	"Auto": "",
-<<<<<<< HEAD
 	"Auto (Random)": "",
 	"Auto Redirect": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Auto-Copy Response to Clipboard": "",
 	"Auto-Create Groups": "",
 	"Auto-Playback Response": "",
@@ -308,7 +270,6 @@
 	"AUTOMATIC1111 Api Auth String": "",
 	"AUTOMATIC1111 Base URL": "",
 	"AUTOMATIC1111 Base URL is required.": "",
-<<<<<<< HEAD
 	"Automatically inject system tools in native function calling mode (e.g., timestamps, memory, chat history, notes, etc.)": "",
 	"Automation": "",
 	"Automation created": "",
@@ -317,8 +278,6 @@
 	"Automation triggered": "",
 	"Automation updated": "",
 	"Automations": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Available list": "",
 	"Available models": "",
 	"Available Skills": "",
@@ -340,11 +299,8 @@
 	"Bearer": "",
 	"before": "",
 	"Being lazy": "",
-<<<<<<< HEAD
 	"Bing": "",
-=======
 	"Beta": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Bing Search V7 Endpoint": "",
 	"Bing Search V7 Subscription Key": "",
 	"Bio": "",
@@ -356,12 +312,9 @@
 	"Boosting or penalizing specific tokens for constrained responses. Bias values will be clamped between -100 and 100 (inclusive). (Default: none)": "",
 	"Both Docling OCR Engine and Language(s) must be provided or both left empty.": "",
 	"Brave Search API Key": "",
-<<<<<<< HEAD
 	"Break down complex requests into trackable steps": "",
 	"Browse and query knowledge bases": "",
 	"Builtin Tools": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Bullet List": "",
 	"Button ID": "",
 	"Button Label": "",
@@ -380,12 +333,9 @@
 	"Call feature is not supported when using Web STT engine": "",
 	"Camera": "",
 	"Cancel": "",
-<<<<<<< HEAD
 	"Cancel download of {{model}}": "",
 	"Cannot create an empty note.": "",
 	"Cannot delete the production version": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Capabilities": "",
 	"Capture": "",
 	"Capture Audio": "",
@@ -430,11 +380,8 @@
 	"Citations": "",
 	"Clear memory": "",
 	"Clear Memory": "",
-<<<<<<< HEAD
 	"Clear search": "",
 	"Clear status": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"click here": "",
 	"Click here for filter guides.": "",
 	"Click here for help.": "",
@@ -477,11 +424,8 @@
 	"Code Interpreter Prompt Template": "",
 	"Collapse": "",
 	"Collection": "",
-<<<<<<< HEAD
 	"Collection Field": "",
 	"Collections": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Color": "",
 	"ComfyUI": "",
 	"ComfyUI API Key": "",
@@ -532,7 +476,6 @@
 	"Contact Admin for WebUI Access": "",
 	"Content": "",
 	"Content Extraction Engine": "",
-<<<<<<< HEAD
 	"Content Field": "",
 	"Content lengths (character counts only)": "",
 	"Context": "",
@@ -543,8 +486,6 @@
 	"Context Compaction Threshold": "",
 	"Context Tokens": "",
 	"Continue": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Continue Response": "",
 	"Continue with {{provider}}": "",
 	"Continue with Email": "",
@@ -570,17 +511,14 @@
 	"Copy Prompt": "",
 	"Copy Share Link": "",
 	"Copy to clipboard": "",
-<<<<<<< HEAD
 	"Copy Token": "",
 	"Copy URL": "",
 	"Copying to clipboard was successful!": "",
 	"CORS must be properly configured by the provider to allow requests from Open WebUI.": "",
 	"Could not read file.": "",
 	"CPU": "",
-=======
 	"Copying to clipboard was successful!": "",
 	"CORS must be properly configured by the provider to allow requests from DevBIM.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Create": "",
 	"Create a knowledge base": "",
 	"Create a model": "",
@@ -589,11 +527,8 @@
 	"Create and manage scheduled automations": "",
 	"Create Channel": "",
 	"Create Folder": "",
-<<<<<<< HEAD
 	"Create Image": "",
-=======
 	"Create Group": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Create Knowledge": "",
 	"Create new key": "",
 	"Create new secret key": "",
@@ -622,12 +557,9 @@
 	"Data Controls": "",
 	"Database": "",
 	"Datalab Marker API": "",
-<<<<<<< HEAD
 	"Date Modified": "",
 	"Day": "",
-=======
 	"Datalab Marker API Key required.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"DD/MM/YYYY": "",
 	"December": "",
 	"Deepgram": "",
@@ -638,11 +570,8 @@
 	"Default description enabled": "",
 	"Default Features": "",
 	"Default Filters": "",
-<<<<<<< HEAD
 	"Default Group": "",
-=======
 	"Default mode works with a wider range of models by calling tools once before execution. Native mode leverages the model's built-in tool-calling capabilities, but requires the model to inherently support this feature.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Default Model": "",
 	"Default model updated": "",
 	"Default permissions": "",
@@ -659,16 +588,13 @@
 	"Delete a model": "",
 	"Delete All": "",
 	"Delete All Chats": "",
-<<<<<<< HEAD
 	"Delete all contents inside this directory": "",
 	"Delete all contents inside this folder": "",
 	"Delete automation?": "",
 	"Delete calendar": "",
 	"Delete Calendar": "",
-=======
 	"Delete All Models": "",
 	"Delete chat": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Delete Chat": "",
 	"Delete chat?": "",
 	"Delete directory?": "",
@@ -685,24 +611,18 @@
 	"delete this link": "",
 	"Delete tool?": "",
 	"Delete User": "",
-<<<<<<< HEAD
 	"Delete Version": "",
 	"Deleted": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Deleted {{deleteModelTag}}": "",
 	"Deleted {{name}}": "",
 	"Deleted {{ok}} of {{total}} items": "",
 	"Deleted User": "",
 	"Deployment names are required for Azure OpenAI": "",
-<<<<<<< HEAD
 	"Desc": "",
 	"Describe the edit...": "",
 	"Describe the image...": "",
 	"Describe what changed...": "",
-=======
 	"Describe Pictures in Documents": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Describe your knowledge base and objectives": "",
 	"Description": "",
 	"Deselect": "",
@@ -738,10 +658,7 @@
 	"Discover, download, and explore custom tools": "",
 	"Discover, download, and explore model presets": "",
 	"Display": "",
-<<<<<<< HEAD
 	"Display Chat Title in Tab": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Display Emoji in Call": "",
 	"Display Multi-model Responses in Tabs": "",
 	"Display the Username Instead of You in the Chat": "",
@@ -777,36 +694,27 @@
 	"Drag and drop a file to upload or select a file to view": "",
 	"Draw": "",
 	"Drop any files here to upload": "",
-<<<<<<< HEAD
 	"Drop files here": "",
 	"Drop files here to upload": "",
 	"DuckDuckGo": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"e.g. '30s','10m'. Valid time units are 's', 'm', 'h'.": "",
 	"e.g. 'low', 'medium', 'high'": "",
 	"e.g. \"json\" or a JSON schema": "",
 	"e.g. 60": "",
 	"e.g. A filter to remove profanity from text": "",
-<<<<<<< HEAD
 	"e.g. about the Roman Empire": "",
 	"e.g. alloy, echo, shimmer": "",
 	"e.g. Code Review Guidelines": "",
 	"e.g. code-review-guidelines": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"e.g. en": "",
 	"e.g. My Filter": "",
 	"e.g. My Tools": "",
 	"e.g. my_filter": "",
 	"e.g. my_tools": "",
 	"e.g. pdf, docx, txt": "",
-<<<<<<< HEAD
 	"e.g. Step-by-step instructions for code reviews": "",
 	"e.g. Tell me a fun fact": "",
 	"e.g. Tell me a fun fact about the Roman Empire": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"e.g. Tools for performing various operations": "",
 	"e.g., 3, 4, 5 (leave blank for default)": "",
 	"e.g., audio/wav,audio/mpeg,video/* (leave blank for defaults)": "",
@@ -818,22 +726,16 @@
 	"Edit Connection": "",
 	"Edit Default Permissions": "",
 	"Edit Folder": "",
-<<<<<<< HEAD
 	"Edit Image": "",
 	"Edit Knowledge Connection": "",
 	"Edit Last Message": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Edit Memory": "",
 	"Edit Prompt": "",
 	"Edit Terminal Connection": "",
 	"Edit User": "",
 	"Edit User Group": "",
-<<<<<<< HEAD
 	"Edit webhook": "",
 	"Edit workflow.json content": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"edited": "",
 	"Edited": "",
 	"Editing": "",
@@ -848,17 +750,14 @@
 	"Embedding Concurrent Requests": "",
 	"Embedding Model": "",
 	"Embedding Model Engine": "",
-<<<<<<< HEAD
 	"Emoji": "",
 	"Emojis": "",
 	"Empty": "",
 	"Empty message": "",
 	"Enable All": "",
 	"Enable API Keys": "",
-=======
 	"Embedding model set to \"{{embedding_model}}\"": "",
 	"Enable API Key": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Enable autocomplete generation for chat messages": "",
 	"Enable Code Execution": "",
 	"Enable Code Interpreter": "",
@@ -935,14 +834,11 @@
 	"Enter Key Behavior": "",
 	"Enter language": "",
 	"Enter language codes": "",
-<<<<<<< HEAD
 	"Enter Linkup API Key": "",
 	"Enter Microsoft Web IQ API Base URL": "",
 	"Enter Microsoft Web IQ API Key": "",
 	"Enter MinerU API Key": "",
 	"Enter Mistral API Base URL": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Enter Mistral API Key": "",
 	"Enter Model ID": "",
 	"Enter model tag (e.g. {{modelTag}})": "",
@@ -950,24 +846,18 @@
 	"Enter name": "",
 	"Enter New Password": "",
 	"Enter Number of Steps (e.g. 50)": "",
-<<<<<<< HEAD
 	"Enter Ollama Cloud API Key": "",
 	"Enter PaddleOCR-vl API Base URL": "",
 	"Enter PaddleOCR-vl API Token": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Enter Perplexity API Key": "",
 	"Enter Playwright Timeout": "",
 	"Enter Playwright WebSocket URL": "",
 	"Enter prompt here.": "",
 	"Enter proxy URL (e.g. https://user:password@host:port)": "",
 	"Enter reasoning effort": "",
-<<<<<<< HEAD
 	"Enter Redirect URI": "",
-=======
 	"Enter Sampler (e.g. Euler a)": "",
 	"Enter Scheduler (e.g. Karras)": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Enter Score": "",
 	"Enter SearchApi API Key": "",
 	"Enter SearchApi Engine": "",
@@ -1072,16 +962,13 @@
 	"Export as JSON": "",
 	"Export chat (.json)": "",
 	"Export Chats": "",
-<<<<<<< HEAD
 	"Export Config": "",
 	"Export Models": "",
-=======
 	"Export Config to JSON File": "",
 	"Export Functions": "",
 	"Export Models": "",
 	"Export Presets": "",
 	"Export Prompt Suggestions": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Export Prompts": "",
 	"Export Skills": "",
 	"Export to CSV": "",
@@ -1101,14 +988,11 @@
 	"External Web Search URL": "",
 	"Fade Effect for Streaming Text": "",
 	"Failed to add file.": "",
-<<<<<<< HEAD
 	"Failed to add members": "",
 	"Failed to archive chat.": "",
 	"Failed to attach file": "",
 	"Failed to clear status": "",
 	"Failed to compare files.": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Failed to connect to {{URL}} OpenAPI tool server": "",
 	"Failed to connect to {{URL}} terminal server": "",
 	"Failed to copy link": "",
@@ -1122,27 +1006,21 @@
 	"Failed to extract content from the file.": "",
 	"Failed to fetch models": "",
 	"Failed to generate title": "",
-<<<<<<< HEAD
 	"Failed to import models": "",
 	"Failed to load chat": "",
 	"Failed to load chat preview": "",
 	"Failed to load DOCX file. Please try downloading it instead.": "",
 	"Failed to load Excel/CSV file. Please try downloading it instead.": "",
-=======
 	"Failed to load chat preview": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Failed to load file content.": "",
 	"Failed to load Interface settings": "",
 	"Failed to load PPTX file. Please try downloading it instead.": "",
 	"Failed to move chat": "",
 	"Failed to read clipboard contents": "",
-<<<<<<< HEAD
 	"Failed to refresh terminals: {{error}}": "",
 	"Failed to remove member": "",
 	"Failed to render diagram": "",
 	"Failed to render visualization": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Failed to save connections": "",
 	"Failed to save conversation": "",
 	"Failed to save models configuration": "",
@@ -1151,22 +1029,16 @@
 	"Failed to save webhook": "",
 	"Failed to unshare chat.": "",
 	"Failed to update settings": "",
-<<<<<<< HEAD
 	"Failed to update status": "",
 	"Failed to update webhook": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Failed to upload file.": "",
 	"fast": "",
 	"Features": "",
 	"Features Permissions": "",
 	"February": "",
-<<<<<<< HEAD
 	"Feedback": "",
 	"Feedback Activity": "",
 	"Feedback deleted successfully": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Feedback Details": "",
 	"Feedback History": "",
 	"Feedbacks": "",
@@ -1179,12 +1051,9 @@
 	"File browser": "",
 	"File content": "",
 	"File content updated successfully.": "",
-<<<<<<< HEAD
 	"File Context": "",
 	"File deleted successfully.": "",
 	"File Extensions": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"File Mode": "",
 	"File moved.": "",
 	"File name": "",
@@ -1194,10 +1063,7 @@
 	"File size should not exceed {{maxSize}} MB.": "",
 	"File Upload": "",
 	"File uploaded successfully": "",
-<<<<<<< HEAD
 	"Filename": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Files": "",
 	"Fill the required fields first.": "",
 	"Fill the source fields and test query first.": "",
@@ -1213,11 +1079,8 @@
 	"Folder Background Image": "",
 	"Folder created successfully": "",
 	"Folder deleted successfully": "",
-<<<<<<< HEAD
 	"Folder Max File Count": "",
 	"Folder name": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Folder Name": "",
 	"Folder name cannot be empty.": "",
 	"Folder name updated successfully": "",
@@ -1254,11 +1117,8 @@
 	"Function is now globally disabled": "",
 	"Function is now globally enabled": "",
 	"Function Name": "",
-<<<<<<< HEAD
 	"Function Name Filter List": "",
 	"Function starter": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Function updated successfully": "",
 	"Functions": "",
 	"Functions allow arbitrary code execution.": "",
@@ -1270,15 +1130,12 @@
 	"General": "",
 	"Generate": "",
 	"Generate an image": "",
-<<<<<<< HEAD
 	"Generate and edit images": "",
 	"Generate Message Pair": "",
 	"Generated Image": "Generated Image",
 	"Generated images will appear here": "",
-=======
 	"Generate Image": "",
 	"Generate prompt pair": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Generating search query": "",
 	"Generating...": "",
 	"Get current time and perform date/time calculations": "",
@@ -1291,16 +1148,13 @@
 	"Google PSE API Key": "",
 	"Google PSE Engine Id": "",
 	"Gravatar": "",
-<<<<<<< HEAD
 	"Grid": "",
 	"Grokipedia": "",
 	"group": "",
 	"Group": "",
 	"Group Channel": "",
 	"Group Claim": "",
-=======
 	"Group": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Group created successfully": "",
 	"Group deleted successfully": "",
 	"Group Description": "",
@@ -1311,7 +1165,6 @@
 	"H2": "",
 	"H3": "",
 	"Haptic Feedback": "",
-<<<<<<< HEAD
 	"Header variables": "",
 	"Headers": "",
 	"Headers must be a valid JSON object": "",
@@ -1319,12 +1172,10 @@
 	"Hello, {{name}}": "",
 	"Help": "",
 	"Help the community discover great models": "",
-=======
 	"Height": "",
 	"Hello, {{name}}": "",
 	"Help": "",
 	"Help us create the best community leaderboard by sharing your feedback history!": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Hex Color": "",
 	"Hex Color - Leave empty for default color": "",
 	"Hidden": "",
@@ -1345,14 +1196,11 @@
 	"Hybrid Search": "",
 	"I acknowledge that I have read and I understand the implications of my action. I am aware of the risks associated with executing arbitrary code and I have verified the trustworthiness of the source.": "",
 	"ID": "",
-<<<<<<< HEAD
 	"ID cannot contain \":\" or \"|\" characters": "",
 	"ID copied to clipboard": "",
 	"Identity audit": "",
 	"Idle only": "",
 	"Idle Timeout": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"iframe Sandbox Allow Forms": "",
 	"iframe Sandbox Allow Same Origin": "",
 	"Ignite curiosity": "",
@@ -1376,14 +1224,12 @@
 	"Import From Link": "",
 	"Import Functions": "",
 	"Import Models": "",
-<<<<<<< HEAD
 	"Import Prompts": "",
 	"Import Skills": "",
 	"Import successful": "",
 	"Import Tools": "",
 	"Important Update": "",
 	"Inactive": "",
-=======
 	"Import Notes": "",
 	"Import Presets": "",
 	"Import Prompt Suggestions": "",
@@ -1391,7 +1237,6 @@
 	"Import Tools": "",
 	"Important Update": "",
 	"In order to force OCR, performing OCR must be enabled.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Include": "",
 	"Include `--api-auth` flag when running stable-diffusion-webui": "",
 	"Include `--api` flag when running stable-diffusion-webui": "",
@@ -1419,11 +1264,8 @@
 	"Invalid JSON file": "",
 	"Invalid JSON format for ComfyUI Workflow.": "",
 	"Invalid JSON format in Additional Config": "",
-<<<<<<< HEAD
 	"Invalid JSON format in MinerU Parameters": "",
-=======
 	"Invalid Tag": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"is typing...": "",
 	"Italic": "",
 	"January": "",
@@ -1443,11 +1285,7 @@
 	"Keep in Sidebar": "",
 	"Key": "",
 	"Key is required": "",
-<<<<<<< HEAD
-	"Keyboard Shortcuts": "",
-=======
 	"Keyboard shortcuts": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Knowledge": "",
 	"Knowledge Access": "",
 	"Knowledge Base": "",
@@ -1457,13 +1295,10 @@
 	"Knowledge Description": "",
 	"Knowledge Name": "",
 	"Knowledge Public Sharing": "",
-<<<<<<< HEAD
 	"Knowledge Sharing": "",
 	"Knowledge source created.": "",
 	"Knowledge source updated.": "",
-=======
 	"Knowledge reset successfully.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Knowledge updated successfully": "",
 	"Kokoro.js (Browser)": "",
 	"Kokoro.js Dtype": "",
@@ -1485,23 +1320,17 @@
 	"Learn More": "",
 	"Learn more about Open Terminal": "",
 	"Learn more about OpenAPI tool servers.": "",
-<<<<<<< HEAD
 	"Learn more about Voxtral transcription.": "",
 	"Leave a public review for {{modelName}}": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Leave empty for no compression": "",
 	"Leave empty for unlimited": "",
 	"Leave empty to include all models from \"{{url}}\" endpoint": "",
 	"Leave empty to include all models from \"{{url}}/api/tags\" endpoint": "",
 	"Leave empty to include all models from \"{{url}}/models\" endpoint": "",
 	"Leave empty to include all models or select specific models": "",
-<<<<<<< HEAD
 	"Leave empty to use first admin user": "",
 	"Leave empty to use the default config, or enter a valid json (see https://yandex.cloud/en/docs/search-api/api-ref/WebSearch/search#yandex.cloud.searchapi.v2.WebSearchRequest)": "",
 	"Leave empty to use the default model (voxtral-mini-latest).": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Leave empty to use the default prompt, or enter a custom prompt": "",
 	"Leave model field empty to use the default model.": "",
 	"Legacy": "",
@@ -1510,14 +1339,11 @@
 	"Lifecycle JSON": "",
 	"Lift List": "",
 	"Light": "",
-<<<<<<< HEAD
 	"Limit concurrent search queries. 0 = unlimited (default). Set to 1 for sequential execution (recommended for APIs with strict rate limits like Brave free tier).": "",
 	"Limits the number of concurrent embedding requests. Set to 0 for unlimited.": "",
 	"Linkup API Key": "",
 	"List": "",
 	"List calendars, search, create, update, and delete calendar events": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Listening...": "",
 	"Live": "",
 	"llama.cpp": "",
@@ -1558,23 +1384,17 @@
 	"Max tokens to retrieve (1024-32768, default 8192)": "",
 	"Max Upload Count": "",
 	"Max Upload Size": "",
-<<<<<<< HEAD
 	"Maximum characters to return from fetched URLs. Leave empty for no limit.": "",
 	"Maximum number of files allowed per folder.": "",
 	"Maximum number of files per folder is {{max}}.": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Maximum of 3 models can be downloaded simultaneously. Please try again later.": "",
 	"May": "",
 	"Medium": "",
-<<<<<<< HEAD
 	"Member removed successfully": "",
 	"members": "",
 	"Members": "",
 	"Members added successfully": "",
 	"Memories": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Memories accessible by LLMs will be shown here.": "",
 	"Memory": "",
 	"Memory added successfully": "",
@@ -1585,12 +1405,9 @@
 	"Merge Accounts by Email": "",
 	"Merge Responses": "",
 	"Merged Response": "",
-<<<<<<< HEAD
 	"Message": "",
 	"Message counts and response timestamps": "",
 	"Message counts are based on assistant responses.": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Message rating should be enabled to use this feature": "",
 	"Message text...": "",
 	"messages": "",
@@ -1600,7 +1417,6 @@
 	"Microsoft OneDrive": "",
 	"Microsoft OneDrive (personal)": "",
 	"Microsoft OneDrive (work/school)": "",
-<<<<<<< HEAD
 	"Microsoft Web IQ API Base URL": "",
 	"Microsoft Web IQ API Key": "",
 	"min": "",
@@ -1610,10 +1426,8 @@
 	"Mistral OCR API Key required.": "",
 	"MistralAI": "",
 	"Mo_day_of_week": "",
-=======
 	"Mistral OCR": "",
 	"Mistral OCR API Key required.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Model": "",
 	"Model '{{modelName}}' has been successfully downloaded.": "",
 	"Model '{{modelTag}}' is already in queue for downloading.": "",
@@ -1639,11 +1453,8 @@
 	"Model Name": "",
 	"Model name already exists, please choose a different one": "",
 	"Model Name is required.": "",
-<<<<<<< HEAD
 	"Model names and usage frequency": "",
 	"Model not found": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Model not selected": "",
 	"Model Parameters": "",
 	"Model Params": "",
@@ -1677,13 +1488,10 @@
 	"Name your knowledge base": "",
 	"Name, prompt, and model are required": "",
 	"Native": "",
-<<<<<<< HEAD
 	"Native mode (default) leverages the model's built-in tool-calling capabilities. Legacy mode works with a wider range of models by calling tools once before execution via prompt injection.": "",
 	"Never": "",
 	"New": "",
 	"New Automation": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"New Button": "",
 	"New calendar": "",
 	"New Calendar": "",
@@ -1694,7 +1502,6 @@
 	"New File": "",
 	"New Folder": "",
 	"New Function": "",
-<<<<<<< HEAD
 	"New Group": "",
 	"New Knowledge": "",
 	"New Model": "",
@@ -1704,20 +1511,15 @@
 	"New Skill": "",
 	"New Temporary Chat": "",
 	"New Terminal": "",
-=======
 	"New Note": "",
 	"New Password": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"New Tool": "",
 	"new-channel": "",
 	"Next message": "Next message",
-<<<<<<< HEAD
 	"Next run": "",
 	"No access grants. Private to you.": "",
 	"No activity data": "",
 	"No additional headers are sent unless configured.": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"No authentication": "",
 	"No automations found": "",
 	"No chats found": "",
@@ -1731,7 +1533,6 @@
 	"No data": "",
 	"No data found": "",
 	"No distance available": "",
-<<<<<<< HEAD
 	"No event webhooks configured.": "",
 	"No execution logs available yet": "",
 	"No expiration can pose security risks.": "",
@@ -1749,13 +1550,11 @@
 	"No kernel": "",
 	"No knowledge bases accessible": "",
 	"No knowledge bases found.": "",
-=======
 	"No feedbacks found": "",
 	"No file selected": "",
 	"No groups with access, add a group to grant access": "",
 	"No HTML, CSS, or JavaScript content found.": "",
 	"No inference engine with management support found": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"No knowledge found": "",
 	"No limit": "",
 	"No memories to clear": "",
@@ -1766,14 +1565,11 @@
 	"No models selected": "",
 	"No Notes": "",
 	"No notes found": "",
-<<<<<<< HEAD
 	"No one": "",
 	"No output items": "",
 	"No pinned messages": "",
 	"No prompts found": "",
 	"No Repeat": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"No results": "",
 	"No results found": "",
 	"No search query generated": "",
@@ -1782,14 +1578,11 @@
 	"No source available": "",
 	"No sources found": "",
 	"No suggestion prompts": "",
-<<<<<<< HEAD
 	"No Terminal connection configured.": "",
 	"No terminal connections configured.": "",
 	"No tool server connections configured.": "",
 	"No tools accessible": "",
 	"No tools found": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"No users were found.": "",
 	"No valves": "",
 	"No valves to update": "",
@@ -1798,11 +1591,8 @@
 	"Not configured": "",
 	"Not factually correct": "",
 	"Not helpful": "",
-<<<<<<< HEAD
 	"Not Registered": "",
 	"Not scheduled": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Note": "",
 	"Note deleted successfully": "",
 	"Note: If you set a minimum score, the search will only return documents with a score greater than or equal to the minimum score.": "",
@@ -1812,12 +1602,9 @@
 	"Notifications": "",
 	"November": "",
 	"OAuth": "",
-<<<<<<< HEAD
 	"OAuth / OIDC": "",
 	"OAuth 2.1": "",
 	"OAuth 2.1 (Static)": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"OAuth ID": "",
 	"OAuth Resource Parameter": "",
 	"OAuth Scopes": "",
@@ -1855,18 +1642,16 @@
 	"Open modal to configure connection": "",
 	"Open Modal To Manage Floating Quick Actions": "",
 	"Open Modal To Manage Image Compression": "",
-<<<<<<< HEAD
 	"Open Model Selector": "",
 	"Open Settings": "",
-=======
 	"Open new chat": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Open Sidebar": "",
 	"Open Terminal": "",
 	"Open User Profile Menu": "",
 	"DevBIM can use tools provided by any OpenAPI server.": "",
 	"DevBIM uses faster-whisper internally.": "",
 	"DevBIM uses SpeechT5 and CMU Arctic speaker embeddings.": "",
+	"Open WebUI version": "",
 	"DevBIM version (v{{OPEN_WEBUI_VERSION}}) is lower than required version (v{{REQUIRED_VERSION}})": "",
 	"OpenAI": "",
 	"OpenAI API": "",
@@ -1897,13 +1682,10 @@
 	"Password": "",
 	"Passwords do not match.": "",
 	"Paste Large Text as File": "",
-<<<<<<< HEAD
 	"Path": "",
 	"Path copied": "",
 	"Paused": "",
-=======
 	"PDF Backend": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"PDF document (.pdf)": "",
 	"PDF Extract Images (OCR)": "",
 	"PDF Loader Mode": "",
@@ -1924,21 +1706,15 @@
 	"Perplexity Search Context Usage": "",
 	"Persistent": "",
 	"Personalization": "",
-<<<<<<< HEAD
 	"Picture Claim": "",
-=======
 	"Picture Description API Config": "",
 	"Picture Description Local Config": "",
 	"Picture Description Mode": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Pin": "",
 	"Pin to Sidebar": "",
 	"Pinned": "",
-<<<<<<< HEAD
 	"Pinned Messages": "",
 	"Pinned Models": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Pioneer insights": "",
 	"Pipe": "",
 	"Pipeline": "",
@@ -1960,16 +1736,13 @@
 	"Please enter a prompt": "",
 	"Please enter a valid path": "",
 	"Please enter a valid URL": "",
-<<<<<<< HEAD
 	"Please enter a valid URL.": "",
 	"Please enter Client ID and Client Secret": "",
 	"Please fill in all fields.": "",
 	"Please register the OAuth client": "",
 	"Please save the connection to persist the OAuth client information and do not change the ID": "",
-=======
 	"Please fill in all fields.": "",
 	"Please select a model first.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Please select a model.": "",
 	"Please select a reason": "",
 	"Please wait until all files are uploaded.": "",
@@ -1988,29 +1761,22 @@
 	"Previous 7 days": "",
 	"Previous message": "Previous message",
 	"Private": "",
-<<<<<<< HEAD
 	"Private conversation between selected users": "",
 	"Production version updated": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Profile": "",
 	"Prompt": "",
 	"Prompt (e.g. Tell me a fun fact about the Roman Empire)": "",
 	"Prompt Autocompletion": "",
 	"Prompt Content": "",
 	"Prompt created successfully": "",
-<<<<<<< HEAD
 	"Prompt Name": "",
 	"Prompt Suggestions": "",
 	"Prompt Template": "",
-=======
 	"Prompt suggestions": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Prompt updated successfully": "",
 	"Prompts": "",
 	"Prompts Access": "",
 	"Prompts Public Sharing": "",
-<<<<<<< HEAD
 	"Prompts Sharing": "",
 	"Provider": "",
 	"Provider Name": "",
@@ -2020,13 +1786,11 @@
 	"Pull a model from Ollama.com": "",
 	"Pull Model": "",
 	"Pyodide file browser": "",
-=======
 	"Provider Type": "",
 	"Public": "",
 	"Pull \"{{searchValue}}\" from Ollama.com": "",
 	"Pull a model from Ollama.com": "",
 	"pypdfium2": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Query Generation Prompt": "",
 	"Querying": "",
 	"Quick Actions": "",
@@ -2038,13 +1802,10 @@
 	"Re-rank models by topic similarity": "",
 	"Read": "",
 	"Read Aloud": "",
-<<<<<<< HEAD
 	"Read more →": "",
 	"Read only": "",
 	"Read Only": "",
 	"Read-Only Access": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Reason": "",
 	"Reasoning Effort": "",
 	"Reasoning Tags": "",
@@ -2056,12 +1817,10 @@
 	"Reconnected": "",
 	"Record": "",
 	"Record voice": "",
-<<<<<<< HEAD
 	"Redirect URI": "",
 	"Redirecting you to Open WebUI Community": "",
-=======
 	"Redirecting you to DevBIM Community": "",
->>>>>>> 7781992ed (fix: dockerfile)
+	"Redirecting you to DevBIM Community": "",
 	"Reduces the probability of generating nonsense. A higher value (e.g. 100) will give more diverse answers, while a lower value (e.g. 10) will be more conservative.": "",
 	"Reference Chats": "",
 	"Refresh": "",
@@ -2096,7 +1855,6 @@
 	"Render Markdown in Previews": "",
 	"Render Markdown in User Messages": "",
 	"Reorder Models": "",
-<<<<<<< HEAD
 	"Repeat": "",
 	"Repeats": "",
 	"Reply": "",
@@ -2105,9 +1863,7 @@
 	"Replying to {{NAME}}": "",
 	"Request Format": "",
 	"Require users to confirm before using Web Search.": "",
-=======
 	"Reply in Thread": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"required": "",
 	"Reranking Batch Size": "",
 	"Reranking Engine": "",
@@ -2149,11 +1905,8 @@
 	"Run Now": "",
 	"Running": "",
 	"Running...": "",
-<<<<<<< HEAD
 	"Runs embedding tasks concurrently to speed up processing. Turn off if rate limits become an issue.": "",
 	"Sa_day_of_week": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Save": "",
 	"Save & Create": "",
 	"Save & Update": "",
@@ -2244,15 +1997,12 @@
 	"Select Engine": "",
 	"Select how to split message text for TTS requests": "",
 	"Select Knowledge": "",
-<<<<<<< HEAD
 	"Select Method": "",
 	"Select model": "",
 	"Select only one model to call": "",
 	"Select view": "",
 	"Selected model: {{modelName}}": "",
-=======
 	"Select only one model to call": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Selected model(s) do not support image inputs": "",
 	"Selected Models": "",
 	"semantic": "",
@@ -2278,24 +2028,18 @@
 	"Session": "",
 	"Session expired. Please sign in again.": "",
 	"Set as default": "",
-<<<<<<< HEAD
 	"Set as Production": "",
-=======
 	"Set CFG Scale": "",
 	"Set Default Model": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Set embedding model": "",
 	"Set embedding model (e.g. {{model}})": "",
 	"Set Image Size": "",
 	"Set reranking model (e.g. {{model}})": "",
-<<<<<<< HEAD
 	"Set the default models that are automatically selected for all users when a new chat is created.": "",
 	"Set the models that are automatically pinned to the sidebar for all users.": "",
-=======
 	"Set Sampler": "",
 	"Set Scheduler": "",
 	"Set Steps": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Set the number of layers, which will be off-loaded to GPU. Increasing this value can significantly improve performance for models that are optimized for GPU acceleration but may also consume more power and GPU resources.": "",
 	"Set the number of worker threads used for computation. This option controls how many threads are used to process incoming requests concurrently. Increasing this value can improve performance under high concurrency workloads but may also consume more CPU resources.": "",
 	"Set Voice": "",
@@ -2310,29 +2054,23 @@
 	"Settings saved successfully!": "",
 	"Share": "",
 	"Share Chat": "",
-<<<<<<< HEAD
 	"Share link copied to clipboard.": "",
 	"Share to Open WebUI Community": "",
 	"Share your background and interests": "",
 	"Shared": "",
 	"Shared Chats": "",
 	"Shared with you": "",
-=======
 	"Share to DevBIM Community": "",
 	"Share your background and interests": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Sharing Permissions": "",
 	"Shortcuts with an asterisk (*) are situational and only active under specific conditions.": "",
 	"Show": "",
 	"Show \"What's New\" Modal on Login": "",
 	"Show Admin Details in Account Pending Overlay": "",
-<<<<<<< HEAD
 	"Show All": "",
 	"Show all ({{COUNT}} characters)": "",
 	"Show Files": "",
 	"Show Files on Terminal Select": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Show Formatting Toolbar": "",
 	"Show image preview": "",
 	"Show Model": "",
@@ -2371,11 +2109,8 @@
 	"Sonar Pro": "",
 	"Sonar Reasoning": "",
 	"Sonar Reasoning Pro": "",
-<<<<<<< HEAD
 	"Sort": "",
 	"Sort by": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Sougou Search API sID": "",
 	"Sougou Search API SK": "",
 	"Source": "",
@@ -2384,7 +2119,6 @@
 	"Speech recognition error: {{error}}": "",
 	"Speech-to-Text": "",
 	"Speech-to-Text Engine": "",
-<<<<<<< HEAD
 	"Speech-to-Text Language": "",
 	"Split documents by markdown headers before applying character/token splitting.": "",
 	"Start a new conversation": "",
@@ -2399,11 +2133,9 @@
 	"Status": "",
 	"Status cleared successfully": "",
 	"Status updated successfully": "",
-=======
 	"standard": "",
 	"Start of the channel": "",
 	"Start Tag": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Status Updates": "",
 	"STDOUT/STDERR": "",
 	"Stop": "",
@@ -2418,15 +2150,12 @@
 	"STT Model": "",
 	"STT Settings": "",
 	"Stylized PDF Export": "",
-<<<<<<< HEAD
 	"Su_day_of_week": "",
 	"Sub Claim": "",
 	"Submit question": "",
 	"Submit suggestion": "",
 	"Subtitle": "",
-=======
 	"Subtitle (e.g. about the Roman Empire)": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Success": "",
 	"Successfully imported {{userCount}} users.": "",
 	"Successfully updated.": "",
@@ -2435,26 +2164,20 @@
 	"Support": "",
 	"Support this plugin:": "",
 	"Supported MIME Types": "",
-<<<<<<< HEAD
 	"Switch to JSON editor": "",
 	"Switch to visual editor": "",
 	"Sync": "",
 	"Sync a local directory with this knowledge base. Only new and modified files will be uploaded. The directory structure will be mirrored.": "",
 	"Sync complete: {{added}} added, {{modified}} modified, {{deleted}} deleted, {{unmodified}} unmodified": "",
 	"Sync Complete!": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Sync directory": "",
 	"System": "",
 	"System events only": "",
 	"System Instructions": "",
 	"System Prompt": "",
-<<<<<<< HEAD
 	"Table": "",
 	"Tag": "",
-=======
 	"Table Mode": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Tags": "",
 	"Tags Generation": "",
 	"Tags Generation Prompt": "",
@@ -2512,11 +2235,8 @@
 	"This ensures that your valuable conversations are securely saved to your backend database. Thank you!": "",
 	"This feature is currently experimental and may not work as expected.": "",
 	"This feature is experimental and may be modified or discontinued without notice.": "",
-<<<<<<< HEAD
 	"This folder is empty": "",
 	"This is a default user permission and will remain enabled.": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"This is an experimental feature, it may not function as expected and is subject to change at any time.": "",
 	"This knowledge base retrieves from a connected source. Open WebUI can query it, but cannot upload, sync, edit, delete, reset, or reindex its source data.": "",
 	"This model is not publicly available. Please select another model.": "",
@@ -2542,12 +2262,9 @@
 	"Tika": "",
 	"Tika Server URL required.": "",
 	"Tiktoken": "",
-<<<<<<< HEAD
 	"Time": "",
 	"Time & Calculation": "",
 	"Timeout": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Title": "",
 	"Title (e.g. Tell me a fun fact)": "",
 	"Title Auto-Generation": "",
@@ -2561,18 +2278,14 @@
 	"To access the WebUI, please reach out to the administrator. Admins can manage user statuses from the Admin Panel.": "",
 	"To attach knowledge base here, add them to the \"Knowledge\" workspace first.": "",
 	"To learn more about available endpoints, visit our documentation.": "",
-<<<<<<< HEAD
 	"To select skills here, add them to the \"Skills\" workspace first.": "",
-=======
 	"To learn more about powerful prompt variables, click here": "",
 	"To protect your privacy, only ratings, model IDs, tags, and metadata are shared from your feedback—your chat logs remain private and are not included.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"To select toolkits here, add them to the \"Tools\" workspace first.": "",
 	"Toast Notifications for New Updates": "",
 	"Today": "",
 	"Today at": "",
 	"Today at {{LOCALIZED_TIME}}": "",
-<<<<<<< HEAD
 	"Toggle {{COUNT}} sources": "",
 	"Toggle 1 source": "",
 	"Toggle details": "",
@@ -2580,11 +2293,9 @@
 	"Toggle Mute": "",
 	"Toggle Sidebar": "",
 	"Toggle status history": "",
-=======
 	"Toggle search": "",
 	"Toggle settings": "",
 	"Toggle sidebar": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Toggle whether current connection is active.": "",
 	"Token": "",
 	"Token counts are estimates and may not reflect actual API usage": "",
@@ -2644,11 +2355,8 @@
 	"Update for the latest features and improvements.": "",
 	"Update Name": "",
 	"Update password": "",
-<<<<<<< HEAD
 	"Update Picture": "",
 	"Update your status": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Updated": "",
 	"Updated at": "",
 	"Updated At": "",
@@ -2662,29 +2370,23 @@
 	"Upload Pipeline": "",
 	"Upload profile image": "",
 	"Upload Progress": "",
-<<<<<<< HEAD
 	"Uploaded files or images": "",
 	"Uploading {{current}}/{{total}}: {{file}}": "",
 	"Uploading...": "",
-=======
 	"Upload Progress: {{uploadedFiles}}/{{totalFiles}} ({{percentage}}%)": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"URL": "",
 	"URL is required": "",
 	"URL Mode": "",
 	"Usage": "",
 	"Use": "",
 	"Use '#' in the prompt input to load and include your knowledge.": "",
-<<<<<<< HEAD
 	"Use /v1/chat/completions endpoint instead of /v1/audio/transcriptions for potentially better accuracy.": "",
 	"Use a valid event name or pattern like user.*": "",
 	"Use Base64": "",
 	"Use Chat Completions API": "",
 	"Use discovered scopes": "",
 	"Use groups to organize your users and assign permissions.": "",
-=======
 	"Use groups to group your users and assign permissions.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Use LLM": "",
 	"Use no proxy to fetch page contents.": "",
 	"Use proxy designated by http_proxy and https_proxy environment variables to fetch page contents.": "",
@@ -2696,7 +2398,6 @@
 	"User Groups": "",
 	"User location successfully retrieved.": "",
 	"User menu": "",
-<<<<<<< HEAD
 	"User Preview": "",
 	"User ratings (thumbs up/down)": "",
 	"User Status": "",
@@ -2704,10 +2405,8 @@
 	"Username": "",
 	"Username Claim": "",
 	"users": "",
-=======
 	"User Webhooks": "",
 	"Username": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Users": "",
 	"Uses DefaultAzureCredential to authenticate": "",
 	"Using Entire Document": "",
@@ -2730,7 +2429,6 @@
 	"View source: {{name}}": "",
 	"View source: {{title}}": "",
 	"Visibility": "",
-<<<<<<< HEAD
 	"Visible": "",
 	"Visible to all users": "",
 	"Vision": "",
@@ -2740,13 +2438,11 @@
 	"Voice mode": "",
 	"Voice Mode Prompt": "",
 	"Waiting for upload...": "",
-=======
 	"Vision": "",
 	"vlm": "",
 	"Voice": "",
 	"Voice Input": "",
 	"Voice mode": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"Warning": "",
 	"Warning:": "",
 	"Warning: Enabling this will allow users to run scheduled prompts automatically.": "",
@@ -2763,15 +2459,12 @@
 	"Web Search Engine": "",
 	"Web Search in Chat": "",
 	"Web Search Query Generation": "",
-<<<<<<< HEAD
 	"Webhook deleted": "",
 	"Webhook Name": "",
 	"Webhook saved": "",
 	"Webhooks": "",
 	"Webpage URLs": "",
-=======
 	"Webhook URL": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"WebUI Settings": "",
 	"WebUI URL": "",
 	"WebUI will make requests to \"{{url}}\"": "",
@@ -2782,11 +2475,8 @@
 	"What are you trying to achieve?": "",
 	"What are you working on?": "",
 	"What's New in": "",
-<<<<<<< HEAD
 	"What's on your mind?": "",
 	"When": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"When enabled, the model will respond to each chat message in real-time, generating a response as soon as the user sends a message. This mode is useful for live chat applications, but may impact performance on slower hardware.": "",
 	"wherever you are": "",
 	"Whether to paginate the output. Each page will be separated by a horizontal rule and page number. Defaults to False.": "",
@@ -2807,15 +2497,12 @@
 	"Yacy Instance URL": "",
 	"Yacy Password": "",
 	"Yacy Username": "",
-<<<<<<< HEAD
 	"Yahoo": "",
 	"Yandex": "",
 	"Yandex Web Search API Key": "",
 	"Yandex Web Search config": "",
 	"Yandex Web Search URL": "",
 	"Yearly": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"Yesterday": "",
 	"Yesterday at {{LOCALIZED_TIME}}": "",
 	"You": "",
@@ -2823,7 +2510,6 @@
 	"You can only chat with a maximum of {{maxCount}} file(s) at a time.": "",
 	"You can personalize your interactions with LLMs by adding memories through the 'Manage' button below, making them more helpful and tailored to you.": "",
 	"You cannot upload an empty file.": "",
-<<<<<<< HEAD
 	"You do not have permission to edit this model": "",
 	"You do not have permission to edit this prompt.": "",
 	"You do not have permission to edit this skill.": "",
@@ -2832,8 +2518,6 @@
 	"You do not have permission to send messages in this channel.": "",
 	"You do not have permission to send messages in this thread.": "",
 	"You do not have permission to upload files to this knowledge base.": "",
-=======
->>>>>>> 7781992ed (fix: dockerfile)
 	"You do not have permission to upload files.": "",
 	"You do not have permission to upload web content.": "",
 	"You have no archived conversations.": "",
@@ -2844,16 +2528,13 @@
 	"You're now logged in.": "",
 	"Your Account": "",
 	"Your account status is currently pending activation.": "",
-<<<<<<< HEAD
 	"Your browser does not support the audio tag.": "",
 	"Your browser does not support the video tag.": "",
-	"Your entire contribution will go directly to the plugin developer; Open WebUI does not take any percentage. However, the chosen funding platform might have its own fees.": "",
+	"Your entire contribution will go directly to the plugin developer; DevBIM does not take any percentage. However, the chosen funding platform might have its own fees.": "",
 	"Your message text or inputs": "",
 	"Your query will be sent to the configured web search provider.": "",
 	"Your usage stats have been successfully synced.": "",
-=======
 	"Your entire contribution will go directly to the plugin developer; DevBIM does not take any percentage. However, the chosen funding platform might have its own fees.": "",
->>>>>>> 7781992ed (fix: dockerfile)
 	"YouTube": "",
 	"Youtube Language": "",
 	"Youtube Proxy URL": ""
