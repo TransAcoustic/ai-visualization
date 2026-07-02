@@ -457,13 +457,11 @@
 			}
 		}
 	};
-
+	
 	const chatEventHandler = async (event, cb) => {
 		const chat = $page.url.pathname.includes(`/c/${event.chat_id}`);
 
 		// Skip events from temporary chats that are not the current chat.
-		// This prevents notifications from being sent to other tabs/devices
-		// for privacy, since temporary chats are not meant to be persisted or visible elsewhere.
 		const isTemporaryChat = event.chat_id?.startsWith('local:');
 		if (isTemporaryChat && event.chat_id !== $chatId) {
 			return;
@@ -483,7 +481,7 @@
 		const type = event?.data?.type ?? null;
 		const data = event?.data?.data ?? null;
 
-		// Calendar alerts are not chat-scoped, handle before chat_id checks
+		// 1. Calendar alerts
 		if (type === 'calendar:alert' && data) {
 			const timeStr =
 				data.minutes_until <= 0
@@ -504,41 +502,17 @@
 				unstyled: true
 			});
 
-						const audio = new Audio(`/audio/notification.mp3`);
-						audio.play().finally(() => {
-							// Ensure the global state is reset after the sound finishes
-							playingNotificationSound.set(false);
-						});
-					}
+			const audio = new Audio(`/audio/notification.mp3`);
+			audio.play()
+				.catch(err => console.warn('Audio play failed:', err))
+				.finally(() => {
+					playingNotificationSound.set(false);
+				});
 
-					if ($isLastActiveTab) {
-						if ($settings?.notificationEnabled ?? false) {
-							new Notification(`${title} • devBim`, {
-								body: content,
-								icon: `${WEBUI_BASE_URL}/static/favicon.png`
-							});
-						}
-					}
-
-					toast.custom(NotificationToast, {
-						componentProps: {
-							onClick: () => {
-								goto(`/c/${event.chat_id}`);
-							},
-							content: content,
-							title: title
-						},
-						duration: 15000,
-						unstyled: true
-					});
-				}
-			}
-			return;
+			return; // прерываем, чтобы не обрабатывать как другие события
 		}
 
-		// Session-targeted RPC calls (code execution, tool calls, direct completion)
-		// must ALWAYS be processed regardless of active chat or tab visibility,
-		// because the backend's sio.call blocks waiting for our callback response.
+		// 2. Session-targeted RPC calls – must ALWAYS be processed
 		if (data?.session_id === $socket.id) {
 			if (type === 'execute:python') {
 				console.log('execute:python', data);
@@ -575,7 +549,6 @@
 							);
 
 							if (res) {
-								// raise if the response is not ok
 								if (!res.ok) {
 									throw await res.json();
 								}
@@ -586,24 +559,15 @@
 									});
 									console.log({ status: true });
 
-									// res will either be SSE or JSON
 									const reader = res.body.getReader();
 									const decoder = new TextDecoder();
 
 									const processStream = async () => {
 										while (true) {
-											// Read data chunks from the response stream
 											const { done, value } = await reader.read();
-											if (done) {
-												break;
-											}
-
-											// Decode the received chunk
+											if (done) break;
 											const chunk = decoder.decode(value, { stream: true });
-
-											// Process lines within the chunk
 											const lines = chunk.split('\n').filter((line) => line.trim() !== '');
-
 											for (const line of lines) {
 												console.log(line);
 												$socket?.emit(channel, line);
@@ -611,7 +575,6 @@
 										}
 									};
 
-									// Process the stream in the background
 									await processStream();
 								} else {
 									const data = await res.json();
@@ -637,6 +600,7 @@
 			}
 		}
 
+		// 3. Other events (only if chat is not active or in background)
 		if ((event.chat_id !== $chatId && !$temporaryChatEnabled) || isInBackground) {
 			if (type === 'chat:completion') {
 				const { done, content, output, title } = data;
@@ -649,12 +613,12 @@
 						($settings?.notificationSoundAlways ?? false)
 					) {
 						playingNotificationSound.set(true);
-
 						const audio = new Audio(`/audio/notification.mp3`);
-						audio.play().finally(() => {
-							// Ensure the global state is reset after the sound finishes
-							playingNotificationSound.set(false);
-						});
+						audio.play()
+							.catch(err => console.warn('Audio play failed:', err))
+							.finally(() => {
+								playingNotificationSound.set(false);
+							});
 					}
 
 					if ($isLastActiveTab) {
