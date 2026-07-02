@@ -9,7 +9,7 @@
 	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
 	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import equal from 'fast-deep-equal';
-
+	import { WEBUI_API_BASE_URL } from '$lib/constants';
 	import Name from './Name.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import FileItem from '$lib/components/common/FileItem.svelte';
