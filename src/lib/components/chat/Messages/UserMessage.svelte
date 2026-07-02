@@ -9,7 +9,7 @@
 	import AuthProfileImage from '$lib/components/common/AuthProfileImage.svelte';
 	import { DEFAULT_USER_IMAGE } from '$lib/utils/profileImage';
 	import equal from 'fast-deep-equal';
-	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	
 	import Name from './Name.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import FileItem from '$lib/components/common/FileItem.svelte';
@@ -206,10 +206,7 @@
 						dir={$settings?.chatDirection ?? 'auto'}
 					>
 						{#each message.files as file}
-							{@const fileUrl =
-								file.url?.startsWith('data') || file.url?.startsWith('http')
-									? file.url
-									: `${WEBUI_API_BASE_URL}/files/${file.url}${file?.content_type ? '/content' : ''}`}
+							{@const fileUrl = file.url?.startsWith('data') || file.url?.startsWith('http') ? file.url : `/api/v1/files/${file.url}${file?.content_type ? '/content' : ''}`}
 							<div class={($settings?.chatBubble ?? true) ? 'self-end' : ''}>
 								{#if file.type === 'image' || (file?.content_type ?? '').startsWith('image/')}
 									<Image src={fileUrl} imageClassName=" max-h-96 rounded-lg" />
@@ -235,10 +232,7 @@
 						<div class="flex items-center flex-wrap gap-2 -mx-2 mb-1">
 							{#each editedFiles as file, fileIdx}
 								{#if file.type === 'image' || (file?.content_type ?? '').startsWith('image/')}
-									{@const fileUrl =
-										file.url?.startsWith('data') || file.url?.startsWith('http')
-											? file.url
-											: `${WEBUI_API_BASE_URL}/files/${file.url}${file?.content_type ? '/content' : ''}`}
+									{@const fileUrl = file.url?.startsWith('data') || file.url?.startsWith('http') ? file.url : `/api/v1/files/${file.url}${file?.content_type ? '/content' : ''}`}
 									<div class=" relative group">
 										<div class="relative flex items-center">
 											<Image
